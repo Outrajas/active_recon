@@ -1,0 +1,16 @@
+﻿venv/
+__pycache__/
+*.pyc
+
+models/base/
+models/checkpoints/
+models/final/
+
+outputs/
+
+data/processed/
+data/datasets/
+
+*.safetensors
+*.pt
+*.bin

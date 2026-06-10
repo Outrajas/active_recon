@@ -1,0 +1,10 @@
+﻿model:
+  name: "google/flan-t5-large"
+  local_path: "models/base/flan-t5-large"
+
+training:
+  batch_size: 2
+  epochs: 3
+  lr: 2e-4
+  lora_rank: 8
+  gradient_checkpointing: true

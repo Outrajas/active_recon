@@ -1,0 +1,14 @@
+﻿torch
+transformers
+datasets
+accelerate
+peft
+sentencepiece
+safetensors
+tqdm
+pyyaml
+numpy
+pandas
+scikit-learn
+PyMuPDF
+pdfplumber
