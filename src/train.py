@@ -48,7 +48,7 @@ class StyleContinuationDataset(Dataset):
         }
 
 def train_continuation():
-    base_model_path = "models/base/flan-t5-large"
+    base_model_path ="google/flan-t5-large"
     dataset_path = "data/datasets/style_continuation.jsonl"
     output_dir = "models/checkpoints/lora_continuation"
     final_adapter_dir = "models/final/lora_style_rewriter"
