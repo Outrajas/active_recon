@@ -8,8 +8,6 @@ models/final/
 
 outputs/
 
-data/processed/
-data/datasets/
 
 *.safetensors
 *.pt
