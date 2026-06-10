@@ -49,7 +49,7 @@ class StyleTransferDataset(Dataset):
         }
 
 def train_incremental():
-    base_model_path = "models/base/flan-t5-large"
+    base_model_path = "google/flan-t5-large"
     dataset_path = "data/datasets/style_corrupt_pairs.jsonl"
     adapter_path = "models/final/lora_style_rewriter"
     output_dir = "models/checkpoints/lora_style"
