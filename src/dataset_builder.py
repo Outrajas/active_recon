@@ -1,63 +1,85 @@
 ﻿import os
 import json
-import random
 import re
 from pathlib import Path
-from datetime import datetime
 
-DATASET_FILE = "data/datasets/style_corrupt_pairs.jsonl"
-PROCESSED_PDFS_FILE = "outputs/processed_pdfs.json"
-CHUNK_TRACKING_FILE = "outputs/chunked_files.json"
+DATASET_FILE = "data/datasets/style_continuation.jsonl"
+PROCESSED_DIR = "data/processed"
 
-def load_processed_pdfs():
-    if os.path.exists(PROCESSED_PDFS_FILE):
-        with open(PROCESSED_PDFS_FILE, "r") as f:
-            return json.load(f)
-    return {}
+# Patterns to detect metadata lines
+METADATA_PATTERNS = [
+    r"Proceedings of",
+    r"Association for Computational Linguistics",
+    r"@\w+\.com",
+    r"ISBN",
+    r"pages \d+",
+    r"Volume",
+    r"Conference on",
+    r"https?://",
+    r"copyright",
+    r"©",
+    r"Submitted to",
+    r"Received",
+    r"Accepted",
+    r"Published in",
+    r"arXiv",
+]
 
-def load_chunked_files():
-    if os.path.exists(CHUNK_TRACKING_FILE):
-        with open(CHUNK_TRACKING_FILE, "r") as f:
-            return json.load(f)
-    return {}
+def is_metadata_line(line):
+    line_lower = line.lower()
+    for pat in METADATA_PATTERNS:
+        if re.search(pat, line_lower):
+            return True
+    return False
 
-def save_chunked_files(chunked):
-    os.makedirs(os.path.dirname(CHUNK_TRACKING_FILE), exist_ok=True)
-    with open(CHUNK_TRACKING_FILE, "w") as f:
-        json.dump(chunked, f, indent=2)
+def clean_text(text, skip_first_words=1000):
+    lines = text.split('\n')
+    filtered_lines = [line for line in lines if not is_metadata_line(line)]
+    text = '\n'.join(filtered_lines)
+    if skip_first_words > 0:
+        words = text.split()
+        if len(words) > skip_first_words:
+            text = ' '.join(words[skip_first_words:])
+    return text
 
-def corrupt_text(text, corruption_prob=0.25):
-    words = text.split()
-    if len(words) < 8:
-        return text
-    corrupted = [w for w in words if random.random() > corruption_prob]
-    if len(corrupted) < 4:
-        corrupted = words[:4]
-    if len(corrupted) > 3:
-        start = random.randint(0, len(corrupted)-3)
-        end = random.randint(start+2, min(start+5, len(corrupted)))
-        block = corrupted[start:end]
-        random.shuffle(block)
-        corrupted[start:end] = block
-    if random.random() < 0.3:
-        corrupted = [re.sub(r'[^\w\s]', '', w) for w in corrupted]
-    if random.random() < 0.2 and '.' in text:
-        sentences = text.split('. ')
-        if len(sentences) > 1:
-            keep = random.randint(1, len(sentences)-1)
-            corrupted = sentences[:keep]
-            corrupted = ' '.join(corrupted).split()
-    return ' '.join(corrupted)
-
-def chunk_text(text, min_words=60, target_words=120, max_words=200):
+def chunk_text(text, min_words=150, target_words=300, max_words=450):
     sentences = re.split(r'(?<=[.!?])\s+', text)
     chunks = []
-    current = []
-    cur_len = 0
     for sent in sentences:
         sent = sent.strip()
         if not sent:
             continue
+        word_count = len(sent.split())
+        # If a single sentence exceeds max_words, split it artificially
+        if word_count > max_words:
+            words = sent.split()
+            for i in range(0, word_count, max_words):
+                piece = ' '.join(words[i:i+max_words])
+                if len(piece.split()) >= min_words:
+                    chunks.append(piece)
+            continue
+        # Otherwise, accumulate sentences normally
+        # (we'll rebuild the logic to use a proper accumulator)
+    # Re-implement accumulation because the above loop splits chunks differently
+    # Better: collect all sentences (split long ones) then accumulate
+    all_sentences = []
+    for sent in sentences:
+        sent = sent.strip()
+        if not sent:
+            continue
+        wc = len(sent.split())
+        if wc > max_words:
+            words = sent.split()
+            for i in range(0, wc, max_words):
+                piece = ' '.join(words[i:i+max_words])
+                all_sentences.append(piece)
+        else:
+            all_sentences.append(sent)
+    # Now accumulate into chunks
+    chunks = []
+    current = []
+    cur_len = 0
+    for sent in all_sentences:
         wc = len(sent.split())
         if cur_len + wc <= target_words:
             current.append(sent)
@@ -71,42 +93,85 @@ def chunk_text(text, min_words=60, target_words=120, max_words=200):
         chunks.append(' '.join(current))
     return chunks
 
-def build_dataset_incremental(processed_dir="data/processed"):
-    processed_pdfs = load_processed_pdfs()
-    chunked_files = load_chunked_files()
-    os.makedirs(os.path.dirname(DATASET_FILE), exist_ok=True)
-    mode = "a" if os.path.exists(DATASET_FILE) else "w"
-    total_new = 0
-    with open(DATASET_FILE, mode, encoding="utf-8") as out_f:
-        for pdf_path, _ in processed_pdfs.items():
-            if pdf_path in chunked_files:
+def split_chunk_into_prompt_target(chunk, split_ratio=0.7):
+    words = chunk.split()
+    split_idx = max(1, int(len(words) * split_ratio))
+    # Find sentence boundary
+    best_idx = split_idx
+    search_range = min(30, len(words) - split_idx)
+    for i in range(split_idx, min(split_idx + search_range, len(words))):
+        if words[i-1].endswith(('.', '!', '?')):
+            best_idx = i
+            break
+    prompt_words = words[:best_idx]
+    target_words = words[best_idx:]
+    if len(target_words) < 15:
+        target_start = max(1, int(len(words) * 0.7))
+        prompt_words = words[:target_start]
+        target_words = words[target_start:]
+    return ' '.join(prompt_words), ' '.join(target_words)
+
+def build_dataset():
+    styles = ["academic", "literary", "technical"]
+    all_records = []
+    total_chunks_processed = 0
+    total_pairs_generated = 0
+    prompt_lengths = []
+    target_lengths = []
+
+    for style in styles:
+        style_dir = Path(PROCESSED_DIR) / style
+        if not style_dir.exists():
+            print(f"Warning: {style_dir} does not exist, skipping {style}")
+            continue
+
+        for txt_file in style_dir.glob("*.txt"):
+            print(f"Processing {txt_file}")
+            with open(txt_file, "r", encoding="utf-8") as f:
+                raw_text = f.read()
+            cleaned = clean_text(raw_text, skip_first_words=1000)
+            if len(cleaned.split()) < 300:
+                print(f"  -> Skipping {txt_file.name} – too short after cleaning")
                 continue
-            # Build correct processed txt path: data/processed/{style}/{filename}.txt
-            pdf_path_obj = Path(pdf_path)
-            style = pdf_path_obj.parent.name  # academic, literary, technical
-            txt_filename = pdf_path_obj.stem + ".txt"
-            txt_path = Path(processed_dir) / style / txt_filename
-            if not txt_path.exists():
-                print(f"Processed text missing: {txt_path}")
-                continue
-            with open(txt_path, "r", encoding="utf-8") as f:
-                text = f.read()
-            style_upper = style.upper()
-            chunks = chunk_text(text)
+            chunks = chunk_text(cleaned, min_words=150, target_words=300, max_words=450)
+            total_chunks_processed += len(chunks)
             for chunk in chunks:
-                if len(chunk.split()) < 30:
+                if len(chunk.split()) < 100:
                     continue
-                corrupted = corrupt_text(chunk)
-                if corrupted == chunk or len(corrupted.split()) < 10:
-                    words = chunk.split()
-                    drop = random.sample(range(len(words)), min(3, len(words)//5))
-                    corrupted = ' '.join(w for i,w in enumerate(words) if i not in drop)
-                record = {"style": style_upper, "corrupted": corrupted, "original": chunk}
-                out_f.write(json.dumps(record) + "\n")
-                total_new += 1
-            chunked_files[pdf_path] = datetime.now().isoformat()
-    save_chunked_files(chunked_files)
-    print(f"Added {total_new} new corrupt-original pairs to dataset.")
+                prompt_text, target_text = split_chunk_into_prompt_target(chunk, split_ratio=0.7)
+                if len(target_text.split()) < 20:
+                    continue
+                record = {
+                    "style": style.upper(),
+                    "prompt": prompt_text,
+                    "target": target_text
+                }
+                all_records.append(record)
+                total_pairs_generated += 1
+                prompt_lengths.append(len(prompt_text.split()))
+                target_lengths.append(len(target_text.split()))
+
+    os.makedirs(os.path.dirname(DATASET_FILE), exist_ok=True)
+    with open(DATASET_FILE, "w", encoding="utf-8") as f:
+        for rec in all_records:
+            f.write(json.dumps(rec) + "\n")
+
+    if total_pairs_generated > 0:
+        avg_prompt = sum(prompt_lengths) / len(prompt_lengths)
+        avg_target = sum(target_lengths) / len(target_lengths)
+        min_prompt = min(prompt_lengths)
+        max_prompt = max(prompt_lengths)
+        min_target = min(target_lengths)
+        max_target = max(target_lengths)
+    else:
+        avg_prompt = avg_target = min_prompt = max_prompt = min_target = max_target = 0
+
+    print(f"\nDataset summary:")
+    print(f"  Total pairs: {total_pairs_generated}")
+    print(f"  Processed chunks: {total_chunks_processed}")
+    print(f"  Prompt word count – avg: {avg_prompt:.1f}, min: {min_prompt}, max: {max_prompt}")
+    print(f"  Target word count – avg: {avg_target:.1f}, min: {min_target}, max: {max_target}")
+    print(f"  Saved to {DATASET_FILE}")
 
 if __name__ == "__main__":
-    build_dataset_incremental()
+    build_dataset()
