@@ -1,0 +1,13 @@
+﻿database:
+  path: "data/semantic_compiler.db"
+llm:
+  model_name: "all-MiniLM-L6-v2"
+  device: "cpu"
+  precision: "float32"
+gnn:
+  type: "GAT"
+  hidden_dim: 256
+reasoning:
+  probability_threshold: 0.85
+output:
+  mode: "pseudo-language"
