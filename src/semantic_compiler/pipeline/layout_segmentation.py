@@ -52,7 +52,8 @@ class LayoutSegmentationStage:
             return 'TITLE'
         if re.search(r'@\w+\.\w+', line_text) or re.search(r'Google\s(Brain|Research)|University\s+of\s+|Department\s+of\s+', line_text, re.IGNORECASE):
             return 'AUTHOR_BLOCK'
-        if re.search(r'(\*|†|‡)|Equal\s+contribution|Work\s+performed|Currently\s+at|Now\s+at|This\s+work\s+was\s+done', line_text, re.IGNORECASE):
+        # Expanded footnote patterns
+        if re.search(r'[\*†‡]|Equal\s+contribution|Work\s+performed|performed\s+while\s+at|Currently\s+at|Now\s+at|This\s+work\s+was\s+done|listing\s+order\s+is\s+random', line_text, re.IGNORECASE):
             return 'FOOTNOTE'
         if re.match(r'^\s*(Figure|Table)\s+\d+', line_text, re.IGNORECASE):
             return 'CAPTION'

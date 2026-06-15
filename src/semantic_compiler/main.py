@@ -4,6 +4,7 @@ from semantic_compiler.utils.config import load_config
 from semantic_compiler.utils.vsa import VSAStore
 from semantic_compiler.llm.extractor import ExtractorLLM
 from semantic_compiler.llm.entity_cleanup import EntityCleanup
+from semantic_compiler.llm.concept_validator import ConceptValidator
 from semantic_compiler.reasoning.diagnostic_engine import DiagnosticEngine
 from semantic_compiler.pipeline.layout_segmentation import LayoutSegmentationStage
 from semantic_compiler.pipeline.document_structure_graph import DocumentStructureGraph
@@ -31,18 +32,35 @@ class SemanticCompiler:
         if ext == '.pdf':
             layout_stage = LayoutSegmentationStage()
             blocks = layout_stage.run(input_path)
+
+            # Build DocumentStructureGraph to obtain section mappings
+            dsg_builder = DocumentStructureGraph()
+            dsg_builder.build(blocks)
+            chunk_section_map = {}
+            for node in dsg_builder.graph.nodes():
+                if dsg_builder.graph.nodes[node].get('type') in ('SECTION', 'DOCUMENT'):
+                    continue
+                section = "Unknown"
+                for pred in dsg_builder.graph.predecessors(node):
+                    if dsg_builder.graph.nodes[pred].get('type') == 'SECTION':
+                        section = dsg_builder.graph.nodes[pred].get('text', pred)
+                        break
+                chunk_section_map[node] = section
+
             semantic_blocks = [b for b in blocks if b['document_role'] in ('PARAGRAPH', 'ABSTRACT')]
             metadata_blocks = [b for b in blocks if b['document_role'] not in ('PARAGRAPH', 'ABSTRACT')]
             chunks = {}
             chunk_attrs = {}
             for i, b in enumerate(semantic_blocks):
                 chunks[i] = b['text']
-                chunk_attrs[i] = {'page': b['page'], 'y': b['y']}
+                section = chunk_section_map.get(b['source_chunk'], 'Unknown')
+                chunk_attrs[i] = {'page': b['page'], 'y': b['y'], 'section': section}
             extra_chunks = {}
             for i, b in enumerate(metadata_blocks):
                 cid = f"meta_{i}"
                 extra_chunks[cid] = b
-                chunk_attrs[cid] = {'page': b['page'], 'y': b['y']}
+                section = chunk_section_map.get(b['source_chunk'], 'Metadata')
+                chunk_attrs[cid] = {'page': b['page'], 'y': b['y'], 'section': section}
         else:
             with open(input_path, 'r', encoding='utf-8') as f:
                 text = f.read()
@@ -50,7 +68,7 @@ class SemanticCompiler:
             if not paragraphs:
                 paragraphs = [text]
             chunks = {i: p for i, p in enumerate(paragraphs)}
-            chunk_attrs = {i: {'page': 1, 'y': float(i)} for i in chunks}
+            chunk_attrs = {i: {'page': 1, 'y': float(i), 'section': 'Main'} for i in chunks}
             extra_chunks = {}
 
         extractor = ExtractionStage(self.llm, self.vsa)
@@ -68,8 +86,13 @@ class SemanticCompiler:
                 "entities": []
             }]
 
+        # Entity cleanup (coref, stopwords)
         cleaner = EntityCleanup()
         extraction_results = cleaner.clean(extraction_results)
+
+        # Concept validation (remove junk)
+        validator = ConceptValidator()
+        extraction_results = validator.validate(extraction_results)
 
         all_chunk_texts = {}
         all_chunk_texts.update({i: chunks[i] for i in chunks})
@@ -82,7 +105,6 @@ class SemanticCompiler:
         memory = HierarchicalMemoryStage()
         merged = memory.run(local_graphs)
 
-        # Suppress GlobalGraphStage output in audit mode to keep stdout clean
         if audit:
             with open(os.devnull, 'w') as fnull:
                 with contextlib.redirect_stdout(fnull):
