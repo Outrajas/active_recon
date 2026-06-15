@@ -3,18 +3,53 @@ import re
 import spacy
 from .concept_extractor import ConceptExtractor
 
-RELATION_KEYWORDS = [
-    (r'\b(uses|utilizes|employs|relies on|leverages|is based on|adopts)\b', 'USES'),
-    (r'\b(replaces|substitutes|removes|eliminates)\b', 'REPLACES'),
-    (r'\b(enables|allows|permits)\b', 'ENABLES'),
-    (r'\b(improves|enhances|boosts|increases)\b', 'IMPROVES'),
-    (r'\b(outperforms|beats|surpasses|exceeds|performs better than)\b', 'OUTPERFORMS'),
-    (r'\b(achieves|obtains|reaches|yields|scores)\b', 'ACHIEVES'),
-    (r'\b(consists of|contains|comprises|includes|is composed of)\b', 'CONTAINS'),
-    (r'\b(causes|leads to|results in|contributes to)\b', 'CAUSES'),
-    (r'\b(follows|adopts)\b', 'FOLLOWS'),
-    (r'\b(depends on|relies on)\b', 'DEPENDS_ON'),
-]
+# Mini-ontology: map verb lemmas to canonical relation label
+VERB_TO_RELATION = {
+    "use": "USES",
+    "utilize": "USES",
+    "employ": "USES",
+    "rely": "USES",          # relies on
+    "leverage": "USES",
+    "base": "USES",          # is based on
+    "replace": "REPLACES",
+    "substitute": "REPLACES",
+    "remove": "REPLACES",
+    "eliminate": "REPLACES",
+    "enable": "ENABLES",
+    "allow": "ENABLES",
+    "permit": "ENABLES",
+    "improve": "IMPROVES",
+    "enhance": "IMPROVES",
+    "boost": "IMPROVES",
+    "increase": "IMPROVES",
+    "outperform": "OUTPERFORMS",
+    "beat": "OUTPERFORMS",
+    "surpass": "OUTPERFORMS",
+    "exceed": "OUTPERFORMS",
+    "achieve": "ACHIEVES",
+    "obtain": "ACHIEVES",
+    "reach": "ACHIEVES",
+    "yield": "ACHIEVES",
+    "score": "ACHIEVES",
+    "consist": "CONTAINS",
+    "contain": "CONTAINS",
+    "comprise": "CONTAINS",
+    "include": "CONTAINS",
+    "cause": "CAUSES",
+    "lead": "CAUSES",        # leads to
+    "result": "CAUSES",      # results in
+    "contribute": "CAUSES",
+    "follow": "FOLLOWS",
+    "adopt": "FOLLOWS",
+    "depend": "DEPENDS_ON",
+}
+
+BANNED_SUBJECTS = {
+    "figure", "table", "section", "appendix", "paper", "work",
+    "authors", "we", "our model", "our approach", "our method",
+    "this model", "this approach", "this method", "this architecture",
+    "the model", "the approach", "the method", "the architecture"
+}
 
 class RelationExtractor:
     def __init__(self):
@@ -23,71 +58,68 @@ class RelationExtractor:
 
     def extract(self, sentence: str) -> list:
         """
-        Finds concepts, detects relation keywords, and uses dependency parse
-        to assign subject/object direction.
+        Uses dependency parsing to find subject-verb-object relationships,
+        then filters by known concepts and relation ontology.
         """
+        doc = self.nlp(sentence)
         concepts = self.concept_extractor.extract_concepts(sentence)
         if len(concepts) < 2:
             return []
 
-        # Parse the sentence once
-        doc = self.nlp(sentence)
         facts = []
+        for token in doc:
+            # Focus on verbs that are the root or have both subject and object children
+            if token.pos_ != "VERB":
+                continue
+            subj_tok = next((c for c in token.children if c.dep_ in ("nsubj", "nsubjpass")), None)
+            obj_tok = next((c for c in token.children if c.dep_ in ("dobj", "attr", "pobj")), None)
+            if not subj_tok or not obj_tok:
+                continue
 
-        # For each relation keyword pattern, find matches
-        for pattern, rel_label in RELATION_KEYWORDS:
-            for match in re.finditer(pattern, sentence, re.IGNORECASE):
-                keyword_start = match.start()
-                keyword_end = match.end()
+            # Get the text of subject and object, and find matching concept (allow substring)
+            subj_text = subj_tok.text.lower().strip()
+            obj_text = obj_tok.text.lower().strip()
+            subject_concept = None
+            object_concept = None
+            for conc in concepts:
+                if subj_text in conc.split():
+                    subject_concept = conc
+                if obj_text in conc.split():
+                    object_concept = conc
+            # Fallback: try matching the whole token phrase against concept names
+            if not subject_concept:
+                for conc in concepts:
+                    if conc.split()[0] == subj_text:
+                        subject_concept = conc
+                        break
+            if not object_concept:
+                for conc in concepts:
+                    if conc.split()[-1] == obj_text:
+                        object_concept = conc
+                        break
 
-                # Find the concept that is closest to the keyword as subject (usually before)
-                # and the concept that is closest after as object (simplified heuristic)
-                subject_concept = None
-                object_concept = None
-                best_dist = float('inf')
+            # Skip if subject or object not found or if they are the same
+            if not subject_concept or not object_concept or subject_concept == object_concept:
+                continue
 
-                for token in doc:
-                    if token.dep_ == "ROOT" and token.pos_ == "VERB":
-                        # Get subject (nsubj)
-                        subj_tok = next((c for c in token.children if c.dep_ in ("nsubj", "nsubjpass")), None)
-                        if subj_tok:
-                            subj_text = subj_tok.text.lower()
-                            # Find if any concept contains this subject token
-                            for concept in concepts:
-                                if subj_text in concept.split():
-                                    subject_concept = concept
-                                    break
-                        # Get object (dobj, attr, pobj)
-                        obj_tok = next((c for c in token.children if c.dep_ in ("dobj", "attr", "pobj")), None)
-                        if obj_tok:
-                            obj_text = obj_tok.text.lower()
-                            for concept in concepts:
-                                if obj_text in concept.split():
-                                    object_concept = concept
-                                    break
+            # Filter banned subjects
+            if subject_concept.lower() in BANNED_SUBJECTS or object_concept.lower() in BANNED_SUBJECTS:
+                continue
 
-                # Fallback: use positional heuristic (concept before keyword vs after)
-                if not subject_concept or not object_concept:
-                    for concept in concepts:
-                        # Find position of concept in sentence
-                        pos = sentence.lower().find(concept)
-                        if pos == -1:
-                            continue
-                        if pos < keyword_start:
-                            if not subject_concept:
-                                subject_concept = concept
-                        elif pos > keyword_end:
-                            if not object_concept:
-                                object_concept = concept
+            # Map verb to canonical relation
+            verb_lemma = token.lemma_.lower()
+            rel_label = VERB_TO_RELATION.get(verb_lemma, token.text.upper())
 
-                if subject_concept and object_concept and subject_concept != object_concept:
-                    facts.append({
-                        'subject': subject_concept,
-                        'relation': rel_label,
-                        'object': object_concept,
-                        'confidence': 0.8,
-                        'evidence': sentence
-                    })
-                    break  # only one fact per keyword match
+            # Ensure we haven't already emitted this fact for the sentence
+            fact = {
+                'subject': subject_concept,
+                'relation': rel_label,
+                'object': object_concept,
+                'confidence': 0.85,
+                'evidence': sentence
+            }
+            # Simple deduplication: check if identical fact already in list
+            if fact not in facts:
+                facts.append(fact)
 
         return facts

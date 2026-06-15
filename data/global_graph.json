@@ -906,19 +906,6 @@
       }
     ],
     [
-      "FACT_18_6",
-      {
-        "type": "FACT",
-        "subject": "transformer",
-        "relation": "FOLLOWS",
-        "object": "decoder",
-        "confidence": 0.8,
-        "source_chunk": 18,
-        "section": "2 Background",
-        "evidence": "The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder, shown in the left and right halves of Figure 1, respectively."
-      }
-    ],
-    [
       "source_19",
       {
         "type": "source_chunk",
@@ -1929,7 +1916,7 @@
         "subject": "transformer",
         "relation": "USES",
         "object": "multi-head attention",
-        "confidence": 0.8,
+        "confidence": 0.85,
         "source_chunk": 44,
         "section": "2 Background",
         "evidence": "The Transformer uses multi-head attention in three different ways:"
@@ -1991,20 +1978,7 @@
       }
     ],
     [
-      "FACT_45_9",
-      {
-        "type": "FACT",
-        "subject": "encoder",
-        "relation": "CONTAINS",
-        "object": "self-attention",
-        "confidence": 0.8,
-        "source_chunk": 45,
-        "section": "2 Background",
-        "evidence": "The encoder contains self-attention layers."
-      }
-    ],
-    [
-      "CLAIM_45_10",
+      "CLAIM_45_9",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2015,7 +1989,7 @@
       }
     ],
     [
-      "CLAIM_45_11",
+      "CLAIM_45_10",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2033,7 +2007,7 @@
       }
     ],
     [
-      "CLAIM_45_13",
+      "CLAIM_45_12",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2044,7 +2018,7 @@
       }
     ],
     [
-      "CLAIM_45_14",
+      "CLAIM_45_13",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2055,7 +2029,7 @@
       }
     ],
     [
-      "METHOD_45_15",
+      "METHOD_45_14",
       {
         "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
@@ -2066,7 +2040,7 @@
       }
     ],
     [
-      "CLAIM_45_18",
+      "CLAIM_45_17",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2128,20 +2102,7 @@
       }
     ],
     [
-      "FACT_47_5",
-      {
-        "type": "FACT",
-        "subject": "decoder",
-        "relation": "CONTAINS",
-        "object": "feed-forward",
-        "confidence": 0.8,
-        "source_chunk": 47,
-        "section": "2 Background",
-        "evidence": "In addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically."
-      }
-    ],
-    [
-      "CLAIM_47_6",
+      "CLAIM_47_5",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -4090,9 +4051,9 @@
       {
         "type": "FACT",
         "subject": "this ls",
-        "relation": "IMPROVES",
+        "relation": "HURTS",
         "object": "perplexity",
-        "confidence": 0.8,
+        "confidence": 0.85,
         "source_chunk": 94,
         "section": "2 Background",
         "evidence": "This ls hurts perplexity, as the model learns to be more unsure, but improves accuracy and BLEU score."
@@ -4264,19 +4225,6 @@
         "confidence": 0.9,
         "source_chunk": 97,
         "section": "2 Background"
-      }
-    ],
-    [
-      "FACT_97_4",
-      {
-        "type": "FACT",
-        "subject": "wmt",
-        "relation": "ACHIEVES",
-        "object": "bleu",
-        "confidence": 0.8,
-        "source_chunk": 97,
-        "section": "2 Background",
-        "evidence": "41.0, On the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 1/4 outperforming all of the previously published single models, at less than the training cost of the"
       }
     ],
     [
@@ -8818,14 +8766,6 @@
       ]
     },
     {
-      "source": "source_18",
-      "target": "FACT_18_6",
-      "label": "CONTAINS_FACT",
-      "chunks": [
-        18
-      ]
-    },
-    {
       "source": "CONCLUSION_18_1",
       "target": "entity_decoder",
       "label": "MENTIONS",
@@ -8853,22 +8793,6 @@
       "source": "CONCLUSION_18_1",
       "target": "entity_transformer",
       "label": "MENTIONS",
-      "chunks": [
-        18
-      ]
-    },
-    {
-      "source": "FACT_18_6",
-      "target": "entity_transformer",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        18
-      ]
-    },
-    {
-      "source": "FACT_18_6",
-      "target": "entity_decoder",
-      "label": "HAS_OBJECT",
       "chunks": [
         18
       ]
@@ -9723,8 +9647,8 @@
     },
     {
       "source": "source_45",
-      "target": "FACT_45_9",
-      "label": "CONTAINS_FACT",
+      "target": "CLAIM_45_9",
+      "label": "EXTRACTED_FROM",
       "chunks": [
         45
       ]
@@ -9739,7 +9663,7 @@
     },
     {
       "source": "source_45",
-      "target": "CLAIM_45_11",
+      "target": "CLAIM_45_12",
       "label": "EXTRACTED_FROM",
       "chunks": [
         45
@@ -9755,7 +9679,7 @@
     },
     {
       "source": "source_45",
-      "target": "CLAIM_45_14",
+      "target": "METHOD_45_14",
       "label": "EXTRACTED_FROM",
       "chunks": [
         45
@@ -9763,15 +9687,7 @@
     },
     {
       "source": "source_45",
-      "target": "METHOD_45_15",
-      "label": "EXTRACTED_FROM",
-      "chunks": [
-        45
-      ]
-    },
-    {
-      "source": "source_45",
-      "target": "CLAIM_45_18",
+      "target": "CLAIM_45_17",
       "label": "EXTRACTED_FROM",
       "chunks": [
         45
@@ -9842,23 +9758,7 @@
       ]
     },
     {
-      "source": "FACT_45_9",
-      "target": "entity_encoder",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        45
-      ]
-    },
-    {
-      "source": "FACT_45_9",
-      "target": "entity_self-attention",
-      "label": "HAS_OBJECT",
-      "chunks": [
-        45
-      ]
-    },
-    {
-      "source": "CLAIM_45_10",
+      "source": "CLAIM_45_9",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9866,7 +9766,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_10",
+      "source": "CLAIM_45_9",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9874,7 +9774,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_11",
+      "source": "CLAIM_45_10",
       "target": "entity_each position",
       "label": "MENTIONS",
       "chunks": [
@@ -9882,7 +9782,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_11",
+      "source": "CLAIM_45_10",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9890,7 +9790,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_13",
+      "source": "CLAIM_45_12",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9898,7 +9798,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_13",
+      "source": "CLAIM_45_12",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9906,7 +9806,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_14",
+      "source": "CLAIM_45_13",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9914,7 +9814,7 @@
       ]
     },
     {
-      "source": "METHOD_45_15",
+      "source": "METHOD_45_14",
       "target": "entity_scaled dot-product attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9922,7 +9822,7 @@
       ]
     },
     {
-      "source": "METHOD_45_15",
+      "source": "METHOD_45_14",
       "target": "entity_softmax",
       "label": "MENTIONS",
       "chunks": [
@@ -9963,15 +9863,7 @@
     },
     {
       "source": "source_47",
-      "target": "FACT_47_5",
-      "label": "CONTAINS_FACT",
-      "chunks": [
-        47
-      ]
-    },
-    {
-      "source": "source_47",
-      "target": "CLAIM_47_6",
+      "target": "CLAIM_47_5",
       "label": "EXTRACTED_FROM",
       "chunks": [
         47
@@ -10002,23 +9894,7 @@
       ]
     },
     {
-      "source": "FACT_47_5",
-      "target": "entity_decoder",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        47
-      ]
-    },
-    {
-      "source": "FACT_47_5",
-      "target": "entity_feed-forward",
-      "label": "HAS_OBJECT",
-      "chunks": [
-        47
-      ]
-    },
-    {
-      "source": "CLAIM_47_6",
+      "source": "CLAIM_47_5",
       "target": "entity_relu activation",
       "label": "MENTIONS",
       "chunks": [
@@ -10026,7 +9902,7 @@
       ]
     },
     {
-      "source": "CLAIM_47_6",
+      "source": "CLAIM_47_5",
       "target": "entity_relu",
       "label": "MENTIONS",
       "chunks": [
@@ -11706,14 +11582,6 @@
       ]
     },
     {
-      "source": "source_97",
-      "target": "FACT_97_4",
-      "label": "CONTAINS_FACT",
-      "chunks": [
-        97
-      ]
-    },
-    {
       "source": "RESULT_97_1",
       "target": "entity_bleu",
       "label": "MENTIONS",
@@ -11725,22 +11593,6 @@
       "source": "RESULT_97_1",
       "target": "entity_wmt",
       "label": "MENTIONS",
-      "chunks": [
-        97
-      ]
-    },
-    {
-      "source": "FACT_97_4",
-      "target": "entity_wmt",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        97
-      ]
-    },
-    {
-      "source": "FACT_97_4",
-      "target": "entity_bleu",
-      "label": "HAS_OBJECT",
       "chunks": [
         97
       ]

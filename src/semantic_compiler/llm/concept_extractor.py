@@ -34,14 +34,12 @@ class ConceptExtractor:
         doc = self.nlp(text)
         concepts = set()
 
-        # 1. Named entities
         for ent in doc.ents:
             if ent.label_ in ("ORG", "PRODUCT", "GPE", "WORK_OF_ART"):
                 clean = ent.text.strip().lower()
                 if len(clean) > 2 and not self._is_stopword(clean) and clean not in DISCOURSE_BLACKLIST:
                     concepts.add(clean)
 
-        # 2. Noun chunks that look like technical terms
         for chunk in doc.noun_chunks:
             chunk_text = chunk.text.strip().lower()
             if chunk_text in DISCOURSE_BLACKLIST:
@@ -50,14 +48,11 @@ class ConceptExtractor:
                 if self._is_valid_concept(chunk_text):
                     concepts.add(chunk_text)
 
-        # 3. Known concepts (even if not capitalized)
         for known in KNOWN_CONCEPTS:
             if re.search(r'\b' + re.escape(known) + r'\b', text, re.IGNORECASE):
                 concepts.add(known)
 
-        # Remove any concept that is just a figure/table/section reference
         concepts = {c for c in concepts if not re.match(r'^(figure|table|section)\s*\d+', c)}
-        # Remove any that are blacklisted or stopwords
         concepts = {c for c in concepts if c not in DISCOURSE_BLACKLIST and self._is_valid_concept(c)}
         return sorted(concepts)
 
