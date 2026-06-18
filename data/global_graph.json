@@ -590,6 +590,26 @@
       }
     ],
     [
+      "FACT_11_5",
+      {
+        "type": "FACT",
+        "subject": "goal",
+        "relation": "CONTAINS",
+        "object": "foundation",
+        "confidence": 0.85,
+        "source_chunk": 11,
+        "section": "2 Background",
+        "evidence": "The goal of reducing sequential computation also forms the foundation of the Extended Neural GPU"
+      }
+    ],
+    [
+      "entity_foundation",
+      {
+        "type": "ENTITY",
+        "text": "foundation"
+      }
+    ],
+    [
       "source_12",
       {
         "type": "source_chunk",
@@ -677,12 +697,12 @@
       }
     ],
     [
-      "CLAIM_13_1",
+      "MOTIVATION_13_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "MOTIVATION",
         "document_role": "MAIN_CONTENT",
         "text": "Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 13,
         "section": "our research"
       }
@@ -739,9 +759,9 @@
       }
     ],
     [
-      "LIMITATION_15_1",
+      "METHOD_15_1",
       {
-        "semantic_role": "LIMITATION",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "To the best of our knowledge, however, the Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence- aligned RNNs or convolution.",
         "confidence": 0.9,
@@ -840,7 +860,34 @@
       }
     ],
     [
-      "CLAIM_17_5",
+      "FACT_17_5",
+      {
+        "type": "FACT",
+        "subject": "most competitive neural sequence transduction models",
+        "relation": "CONTAINS",
+        "object": "encoder-decoder structure",
+        "confidence": 0.85,
+        "source_chunk": 17,
+        "section": "our research",
+        "evidence": "Most competitive neural sequence transduction models have an encoder-decoder structure"
+      }
+    ],
+    [
+      "entity_most competitive neural sequence transduction models",
+      {
+        "type": "ENTITY",
+        "text": "most competitive neural sequence transduction models"
+      }
+    ],
+    [
+      "entity_encoder-decoder structure",
+      {
+        "type": "ENTITY",
+        "text": "encoder-decoder structure"
+      }
+    ],
+    [
+      "CLAIM_17_8",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -851,7 +898,7 @@
       }
     ],
     [
-      "CLAIM_17_6",
+      "CLAIM_17_9",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -862,7 +909,7 @@
       }
     ],
     [
-      "CLAIM_17_7",
+      "CLAIM_17_10",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -873,7 +920,7 @@
       }
     ],
     [
-      "CLAIM_17_8",
+      "CLAIM_17_11",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -895,9 +942,9 @@
       }
     ],
     [
-      "CONCLUSION_18_1",
+      "METHOD_18_1",
       {
-        "semantic_role": "CONCLUSION",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "The Transformer follows this overall architecture using stacked self-attention and point-wise, fully connected layers for both the encoder and decoder, shown in the left and right halves of Figure 1, respectively.",
         "confidence": 0.9,
@@ -950,7 +997,27 @@
       }
     ],
     [
-      "CLAIM_20_3",
+      "FACT_20_3",
+      {
+        "type": "FACT",
+        "subject": "encoder",
+        "relation": "CONTAINS",
+        "object": "stack",
+        "confidence": 0.85,
+        "source_chunk": 20,
+        "section": "2 Background",
+        "evidence": "Encoder: The encoder is composed of a stack of N = 6 identical layers."
+      }
+    ],
+    [
+      "entity_stack",
+      {
+        "type": "ENTITY",
+        "text": "stack"
+      }
+    ],
+    [
+      "CLAIM_20_5",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -968,7 +1035,47 @@
       }
     ],
     [
-      "CLAIM_20_5",
+      "FACT_20_7",
+      {
+        "type": "FACT",
+        "subject": "each layer",
+        "relation": "CONTAINS",
+        "object": "two sub",
+        "confidence": 0.85,
+        "source_chunk": 20,
+        "section": "2 Background",
+        "evidence": "Each layer has two sub-layers."
+      }
+    ],
+    [
+      "entity_two sub",
+      {
+        "type": "ENTITY",
+        "text": "two sub"
+      }
+    ],
+    [
+      "FACT_20_9",
+      {
+        "type": "FACT",
+        "subject": "each layer",
+        "relation": "CONTAINS",
+        "object": "layers",
+        "confidence": 0.85,
+        "source_chunk": 20,
+        "section": "2 Background",
+        "evidence": "Each layer has two sub-layers."
+      }
+    ],
+    [
+      "entity_layers",
+      {
+        "type": "ENTITY",
+        "text": "layers"
+      }
+    ],
+    [
+      "CLAIM_20_11",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1008,12 +1115,12 @@
       }
     ],
     [
-      "CLAIM_21_3",
+      "METHOD_21_3",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "We employ a residual connection [10] around each of the two sub-layers, followed by layer normalization",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 21,
         "section": "2 Background"
       }
@@ -1095,7 +1202,20 @@
       }
     ],
     [
-      "CLAIM_23_3",
+      "FACT_23_3",
+      {
+        "type": "FACT",
+        "subject": "decoder",
+        "relation": "CONTAINS",
+        "object": "stack",
+        "confidence": 0.85,
+        "source_chunk": 23,
+        "section": "2 Background",
+        "evidence": "Decoder: The decoder is also composed of a stack of N = 6 identical layers."
+      }
+    ],
+    [
+      "CLAIM_23_5",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1106,18 +1226,18 @@
       }
     ],
     [
-      "CLAIM_23_6",
+      "METHOD_23_8",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "Similar to the encoder, we employ residual connections around each of the sub-layers, followed by layer normalization.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 23,
         "section": "2 Background"
       }
     ],
     [
-      "CLAIM_23_8",
+      "CLAIM_23_10",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1128,7 +1248,7 @@
       }
     ],
     [
-      "CLAIM_23_10",
+      "CLAIM_23_12",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1305,12 +1425,52 @@
       }
     ],
     [
-      "CLAIM_27_6",
+      "FACT_27_6",
       {
-        "semantic_role": "CLAIM",
+        "type": "FACT",
+        "subject": "input",
+        "relation": "CONTAINS",
+        "object": "queries",
+        "confidence": 0.85,
+        "source_chunk": 27,
+        "section": "2 Background",
+        "evidence": "The input consists of queries and keys of dimension d , and values of dimension d ."
+      }
+    ],
+    [
+      "entity_queries",
+      {
+        "type": "ENTITY",
+        "text": "queries"
+      }
+    ],
+    [
+      "FACT_27_8",
+      {
+        "type": "FACT",
+        "subject": "input",
+        "relation": "CONTAINS",
+        "object": "keys",
+        "confidence": 0.85,
+        "source_chunk": 27,
+        "section": "2 Background",
+        "evidence": "The input consists of queries and keys of dimension d , and values of dimension d ."
+      }
+    ],
+    [
+      "entity_keys",
+      {
+        "type": "ENTITY",
+        "text": "keys"
+      }
+    ],
+    [
+      "METHOD_27_10",
+      {
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "We compute the dot products of the k v",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 27,
         "section": "2 Background"
       }
@@ -1407,12 +1567,12 @@
       }
     ],
     [
-      "CLAIM_31_1",
+      "METHOD_31_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "In practice, we compute the attention function on a set of queries simultaneously, packed together Q. K V into a matrix The keys and values are also packed together into matrices and .",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 31,
         "section": "2 Background"
       }
@@ -1425,19 +1585,12 @@
       }
     ],
     [
-      "entity_keys",
+      "METHOD_31_4",
       {
-        "type": "ENTITY",
-        "text": "keys"
-      }
-    ],
-    [
-      "CLAIM_31_4",
-      {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "We compute the matrix of outputs as:",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 31,
         "section": "2 Background"
       }
@@ -1578,12 +1731,12 @@
       }
     ],
     [
-      "CLAIM_36_2",
+      "METHOD_36_2",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "We suspect that for large values of k d , the dot products grow large in magnitude, pushing the softmax function into regions where it has k 4. 1 extremely small gradients To counteract this effect, we scale the dot products by .",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 36,
         "section": "2 Background"
       }
@@ -1721,6 +1874,53 @@
       }
     ],
     [
+      "FACT_40_3",
+      {
+        "type": "FACT",
+        "subject": "their dot product, q \u00b7 k = k q k",
+        "relation": "CONTAINS",
+        "object": "mean",
+        "confidence": 0.85,
+        "source_chunk": 40,
+        "section": "2 Background",
+        "evidence": "Then their dot product, q \u00b7 k = k q k , has mean 0 and variance d ."
+      }
+    ],
+    [
+      "entity_their dot product, q \u00b7 k = k q k",
+      {
+        "type": "ENTITY",
+        "text": "their dot product, q \u00b7 k = k q k"
+      }
+    ],
+    [
+      "entity_mean",
+      {
+        "type": "ENTITY",
+        "text": "mean"
+      }
+    ],
+    [
+      "FACT_40_6",
+      {
+        "type": "FACT",
+        "subject": "their dot product, q \u00b7 k = k q k",
+        "relation": "CONTAINS",
+        "object": "variance d",
+        "confidence": 0.85,
+        "source_chunk": 40,
+        "section": "2 Background",
+        "evidence": "Then their dot product, q \u00b7 k = k q k , has mean 0 and variance d ."
+      }
+    ],
+    [
+      "entity_variance d",
+      {
+        "type": "ENTITY",
+        "text": "variance d"
+      }
+    ],
+    [
       "source_41",
       {
         "type": "source_chunk",
@@ -1815,12 +2015,12 @@
       }
     ],
     [
-      "CLAIM_42_4",
+      "METHOD_42_4",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "In this work we employ parallel attention layers, or heads.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 42,
         "section": "2 Background"
       }
@@ -1899,27 +2099,14 @@
       }
     ],
     [
-      "CLAIM_44_1",
+      "METHOD_44_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "The Transformer uses multi-head attention in three different ways:",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 44,
         "section": "2 Background"
-      }
-    ],
-    [
-      "FACT_44_4",
-      {
-        "type": "FACT",
-        "subject": "transformer",
-        "relation": "USES",
-        "object": "multi-head attention",
-        "confidence": 0.85,
-        "source_chunk": 44,
-        "section": "2 Background",
-        "evidence": "The Transformer uses multi-head attention in three different ways:"
       }
     ],
     [
@@ -1978,7 +2165,27 @@
       }
     ],
     [
-      "CLAIM_45_9",
+      "FACT_45_9",
+      {
+        "type": "FACT",
+        "subject": "encoder",
+        "relation": "CONTAINS",
+        "object": "self-attention layers",
+        "confidence": 0.85,
+        "source_chunk": 45,
+        "section": "2 Background",
+        "evidence": "The encoder contains self-attention layers."
+      }
+    ],
+    [
+      "entity_self-attention layers",
+      {
+        "type": "ENTITY",
+        "text": "self-attention layers"
+      }
+    ],
+    [
+      "CLAIM_45_11",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1989,7 +2196,7 @@
       }
     ],
     [
-      "CLAIM_45_10",
+      "CLAIM_45_12",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2007,7 +2214,7 @@
       }
     ],
     [
-      "CLAIM_45_12",
+      "CLAIM_45_14",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2018,7 +2225,7 @@
       }
     ],
     [
-      "CLAIM_45_13",
+      "CLAIM_45_15",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2029,7 +2236,7 @@
       }
     ],
     [
-      "METHOD_45_14",
+      "METHOD_45_16",
       {
         "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
@@ -2040,7 +2247,7 @@
       }
     ],
     [
-      "CLAIM_45_17",
+      "CLAIM_45_19",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2189,6 +2396,33 @@
       }
     ],
     [
+      "FACT_49_5",
+      {
+        "type": "FACT",
+        "subject": "inner-layer",
+        "relation": "CONTAINS",
+        "object": "dimensionality model",
+        "confidence": 0.85,
+        "source_chunk": 49,
+        "section": "2 Background",
+        "evidence": "The dimensionality of input and output is d = 512, and the inner-layer has dimensionality model d = 2048."
+      }
+    ],
+    [
+      "entity_inner-layer",
+      {
+        "type": "ENTITY",
+        "text": "inner-layer"
+      }
+    ],
+    [
+      "entity_dimensionality model",
+      {
+        "type": "ENTITY",
+        "text": "dimensionality model"
+      }
+    ],
+    [
       "source_50",
       {
         "type": "source_chunk",
@@ -2251,12 +2485,12 @@
       }
     ],
     [
-      "CLAIM_51_7",
+      "METHOD_51_7",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "In our model, we share the same weight matrix between the two embedding layers and the pre-softmax \u221a linear transformation, similar to [24].",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 51,
         "section": "2 Background"
       }
@@ -2324,12 +2558,59 @@
       }
     ],
     [
-      "CLAIM_53_4",
+      "FACT_53_4",
       {
-        "semantic_role": "CLAIM",
+        "type": "FACT",
+        "subject": "our model",
+        "relation": "DOES_NOT_CONTAINS",
+        "object": "no recurrence",
+        "confidence": 0.85,
+        "source_chunk": 53,
+        "section": "2 Background",
+        "evidence": "Since our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence."
+      }
+    ],
+    [
+      "entity_our model",
+      {
+        "type": "ENTITY",
+        "text": "our model"
+      }
+    ],
+    [
+      "entity_no recurrence",
+      {
+        "type": "ENTITY",
+        "text": "no recurrence"
+      }
+    ],
+    [
+      "FACT_53_7",
+      {
+        "type": "FACT",
+        "subject": "our model",
+        "relation": "DOES_NOT_CONTAINS",
+        "object": "no convolution",
+        "confidence": 0.85,
+        "source_chunk": 53,
+        "section": "2 Background",
+        "evidence": "Since our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence."
+      }
+    ],
+    [
+      "entity_no convolution",
+      {
+        "type": "ENTITY",
+        "text": "no convolution"
+      }
+    ],
+    [
+      "METHOD_53_9",
+      {
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "To this end, we add \"positional encodings\" to the input embeddings at the",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 53,
         "section": "2 Background"
       }
@@ -2495,7 +2776,27 @@
       }
     ],
     [
-      "CLAIM_58_6",
+      "FACT_58_6",
+      {
+        "type": "FACT",
+        "subject": "positional encodings",
+        "relation": "CONTAINS",
+        "object": "same dimension d model",
+        "confidence": 0.85,
+        "source_chunk": 58,
+        "section": "2 Background",
+        "evidence": "The positional encodings have the same dimension d model as the embeddings, so that the two can be summed."
+      }
+    ],
+    [
+      "entity_same dimension d model",
+      {
+        "type": "ENTITY",
+        "text": "same dimension d model"
+      }
+    ],
+    [
+      "CLAIM_58_8",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2572,12 +2873,12 @@
       }
     ],
     [
-      "CLAIM_61_2",
+      "DEFINITION_61_2",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "DEFINITION",
         "document_role": "MAIN_CONTENT",
         "text": "That is, each dimension of the positional encoding corresponds to a sinusoid.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 61,
         "section": "2 Background"
       }
@@ -2608,7 +2909,27 @@
       }
     ],
     [
-      "CLAIM_61_7",
+      "FACT_61_7",
+      {
+        "type": "FACT",
+        "subject": "wavelengths",
+        "relation": "CONTAINS",
+        "object": "geometric progression",
+        "confidence": 0.85,
+        "source_chunk": 61,
+        "section": "2 Background",
+        "evidence": "The wavelengths form a geometric progression from 2\u03c0 to 10000\u00b72\u03c0."
+      }
+    ],
+    [
+      "entity_geometric progression",
+      {
+        "type": "ENTITY",
+        "text": "geometric progression"
+      }
+    ],
+    [
+      "CLAIM_61_9",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2626,7 +2947,7 @@
       }
     ],
     [
-      "CLAIM_61_9",
+      "CLAIM_61_11",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2637,7 +2958,7 @@
       }
     ],
     [
-      "CLAIM_61_10",
+      "CLAIM_61_12",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2648,7 +2969,7 @@
       }
     ],
     [
-      "HEDGING_61_11",
+      "HEDGING_61_13",
       {
         "semantic_role": "HEDGING",
         "document_role": "MAIN_CONTENT",
@@ -2710,12 +3031,12 @@
       }
     ],
     [
-      "CLAIM_63_7",
+      "ASSUMPTION_63_7",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "ASSUMPTION",
         "document_role": "MAIN_CONTENT",
         "text": "Motivating our use of self-attention we consider three desiderata.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 63,
         "section": "2 Background"
       }
@@ -2816,12 +3137,12 @@
       }
     ],
     [
-      "CLAIM_65_7",
+      "CONCLUSION_65_7",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "CONCLUSION",
         "document_role": "MAIN_CONTENT",
         "text": "Hence we also compare the maximum path length between any two input and output positions in networks composed of the different layer types.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 65,
         "section": "2 Background"
       }
@@ -2856,12 +3177,12 @@
       }
     ],
     [
-      "CLAIM_66_4",
+      "COMPARISON_66_4",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "COMPARISON",
         "document_role": "MAIN_CONTENT",
         "text": "In terms of computational complexity, self-attention layers are faster than recurrent layers when the sequence length n is smaller than the representation dimensionality d, which is most often the case with sentence representations used by state-of-the-art models in machine translations, such as word-piece",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 66,
         "section": "2 Background"
       }
@@ -3324,6 +3645,26 @@
       }
     ],
     [
+      "FACT_75_13",
+      {
+        "type": "FACT",
+        "subject": "each training batch",
+        "relation": "CONTAINS",
+        "object": "set",
+        "confidence": 0.85,
+        "source_chunk": 75,
+        "section": "2 Background",
+        "evidence": "Each training batch contained a set of sentence pairs containing approximately 25000 source tokens and 25000 target tokens."
+      }
+    ],
+    [
+      "entity_set",
+      {
+        "type": "ENTITY",
+        "text": "set"
+      }
+    ],
+    [
       "source_76",
       {
         "type": "source_chunk",
@@ -3704,12 +4045,12 @@
       }
     ],
     [
-      "CLAIM_81_1",
+      "DEFINITION_81_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "DEFINITION",
         "document_role": "MAIN_CONTENT",
         "text": "This corresponds to increasing the learning rate linearly for the first warmup_steps training steps, and decreasing it thereafter proportionally to the inverse square root of the step number.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 81,
         "section": "2 Background"
       }
@@ -3759,12 +4100,12 @@
       }
     ],
     [
-      "CLAIM_83_1",
+      "METHOD_83_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "We employ three types of regularization during training:",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 83,
         "section": "2 Background"
       }
@@ -3781,12 +4122,12 @@
       }
     ],
     [
-      "CLAIM_84_1",
+      "METHOD_84_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "Residual Dropout We apply dropout",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 84,
         "section": "2 Background"
       }
@@ -3810,12 +4151,12 @@
       }
     ],
     [
-      "CLAIM_84_4",
+      "METHOD_84_4",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "In addition, we apply dropout to the sums of the embeddings and the positional encodings in both the encoder and decoder stacks.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 84,
         "section": "2 Background"
       }
@@ -3964,6 +4305,13 @@
       }
     ],
     [
+      "entity_deep-att",
+      {
+        "type": "ENTITY",
+        "text": "deep-att"
+      }
+    ],
+    [
       "source_92",
       {
         "type": "source_chunk",
@@ -4044,19 +4392,6 @@
       {
         "type": "ENTITY",
         "text": "this ls"
-      }
-    ],
-    [
-      "FACT_94_9",
-      {
-        "type": "FACT",
-        "subject": "this ls",
-        "relation": "HURTS",
-        "object": "perplexity",
-        "confidence": 0.85,
-        "source_chunk": 94,
-        "section": "2 Background",
-        "evidence": "This ls hurts perplexity, as the model learns to be more unsure, but improves accuracy and BLEU score."
       }
     ],
     [
@@ -4304,12 +4639,12 @@
       }
     ],
     [
-      "CLAIM_98_9",
+      "METHOD_98_9",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "We set the maximum output length during inference to input length + 50, but terminate early when possible [31].",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 98,
         "section": "6 Results"
       }
@@ -4337,12 +4672,12 @@
       }
     ],
     [
-      "CLAIM_99_2",
+      "METHOD_99_2",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "We estimate the number of floating point operations used to train a model by multiplying the training time, the number of GPUs used, and an estimate of the sustained 5. single-precision floating-point capacity of each GPU",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 99,
         "section": "6 Results"
       }
@@ -4406,12 +4741,12 @@
       }
     ],
     [
-      "CLAIM_101_4",
+      "LIMITATION_101_4",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "LIMITATION",
         "document_role": "MAIN_CONTENT",
         "text": "We used beam search as described in the previous section, but no checkpoint averaging.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 101,
         "section": "6 Results"
       }
@@ -4439,12 +4774,12 @@
       }
     ],
     [
-      "CLAIM_102_1",
+      "METHOD_102_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "In Table 3 rows (A), we vary the number of attention heads and the attention key and value dimensions, keeping the amount of computation constant, as described in Section 3.2.2.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 102,
         "section": "6 Results"
       }
@@ -4708,12 +5043,12 @@
       }
     ],
     [
-      "CLAIM_109_6",
+      "METHOD_109_6",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
         "text": "In row (E) we replace our sinusoidal positional encoding with learned positional embeddings [8], and observe nearly identical results to the base model.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 109,
         "section": "6 Results"
       }
@@ -4741,12 +5076,12 @@
       }
     ],
     [
-      "CLAIM_110_1",
+      "RESULT_110_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "RESULT",
         "document_role": "MAIN_CONTENT",
         "text": "In this work, we presented the Transformer, the first sequence transduction model based entirely on attention, replacing the recurrent layers most commonly used in encoder-decoder architectures with multi-headed self-attention.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 110,
         "section": "6 Results"
       }
@@ -4763,23 +5098,23 @@
       }
     ],
     [
-      "CLAIM_111_1",
+      "COMPARISON_111_1",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "COMPARISON",
         "document_role": "MAIN_CONTENT",
         "text": "For translation tasks, the Transformer can be trained significantly faster than architectures based on recurrent or convolutional layers.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 111,
         "section": "7 Conclusion"
       }
     ],
     [
-      "CLAIM_111_3",
+      "RESULT_111_3",
       {
-        "semantic_role": "CLAIM",
+        "semantic_role": "RESULT",
         "document_role": "MAIN_CONTENT",
         "text": "On both WMT 2014 English-to-German and WMT 2014 English-to-French translation tasks, we achieve a new state of the art.",
-        "confidence": 0.85,
+        "confidence": 0.9,
         "source_chunk": 111,
         "section": "7 Conclusion"
       }
@@ -8454,6 +8789,14 @@
       ]
     },
     {
+      "source": "source_11",
+      "target": "FACT_11_5",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        11
+      ]
+    },
+    {
       "source": "CLAIM_11_1",
       "target": "entity_gpu",
       "label": "MENTIONS",
@@ -8473,6 +8816,22 @@
       "source": "CLAIM_11_1",
       "target": "entity_goal",
       "label": "MENTIONS",
+      "chunks": [
+        11
+      ]
+    },
+    {
+      "source": "FACT_11_5",
+      "target": "entity_goal",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        11
+      ]
+    },
+    {
+      "source": "FACT_11_5",
+      "target": "entity_foundation",
+      "label": "HAS_OBJECT",
       "chunks": [
         11
       ]
@@ -8543,7 +8902,7 @@
     },
     {
       "source": "source_13",
-      "target": "CLAIM_13_1",
+      "target": "MOTIVATION_13_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         13
@@ -8558,7 +8917,7 @@
       ]
     },
     {
-      "source": "CLAIM_13_1",
+      "source": "MOTIVATION_13_1",
       "target": "entity_attention mechanism",
       "label": "MENTIONS",
       "chunks": [
@@ -8566,7 +8925,7 @@
       ]
     },
     {
-      "source": "CLAIM_13_1",
+      "source": "MOTIVATION_13_1",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -8607,7 +8966,7 @@
     },
     {
       "source": "source_15",
-      "target": "LIMITATION_15_1",
+      "target": "METHOD_15_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         15
@@ -8622,7 +8981,7 @@
       ]
     },
     {
-      "source": "LIMITATION_15_1",
+      "source": "METHOD_15_1",
       "target": "entity_convolution",
       "label": "MENTIONS",
       "chunks": [
@@ -8630,7 +8989,7 @@
       ]
     },
     {
-      "source": "LIMITATION_15_1",
+      "source": "METHOD_15_1",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -8638,7 +8997,7 @@
       ]
     },
     {
-      "source": "LIMITATION_15_1",
+      "source": "METHOD_15_1",
       "target": "entity_sequence- aligned rnns",
       "label": "MENTIONS",
       "chunks": [
@@ -8646,7 +9005,7 @@
       ]
     },
     {
-      "source": "LIMITATION_15_1",
+      "source": "METHOD_15_1",
       "target": "entity_transformer",
       "label": "MENTIONS",
       "chunks": [
@@ -8687,24 +9046,8 @@
     },
     {
       "source": "source_17",
-      "target": "CLAIM_17_5",
-      "label": "EXTRACTED_FROM",
-      "chunks": [
-        17
-      ]
-    },
-    {
-      "source": "source_17",
-      "target": "CLAIM_17_6",
-      "label": "EXTRACTED_FROM",
-      "chunks": [
-        17
-      ]
-    },
-    {
-      "source": "source_17",
-      "target": "CLAIM_17_7",
-      "label": "EXTRACTED_FROM",
+      "target": "FACT_17_5",
+      "label": "CONTAINS_FACT",
       "chunks": [
         17
       ]
@@ -8712,6 +9055,30 @@
     {
       "source": "source_17",
       "target": "CLAIM_17_8",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        17
+      ]
+    },
+    {
+      "source": "source_17",
+      "target": "CLAIM_17_9",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        17
+      ]
+    },
+    {
+      "source": "source_17",
+      "target": "CLAIM_17_10",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        17
+      ]
+    },
+    {
+      "source": "source_17",
+      "target": "CLAIM_17_11",
       "label": "EXTRACTED_FROM",
       "chunks": [
         17
@@ -8742,7 +9109,23 @@
       ]
     },
     {
-      "source": "CLAIM_17_6",
+      "source": "FACT_17_5",
+      "target": "entity_most competitive neural sequence transduction models",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        17
+      ]
+    },
+    {
+      "source": "FACT_17_5",
+      "target": "entity_encoder-decoder structure",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        17
+      ]
+    },
+    {
+      "source": "CLAIM_17_9",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -8750,7 +9133,7 @@
       ]
     },
     {
-      "source": "CLAIM_17_7",
+      "source": "CLAIM_17_10",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -8759,14 +9142,14 @@
     },
     {
       "source": "source_18",
-      "target": "CONCLUSION_18_1",
+      "target": "METHOD_18_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         18
       ]
     },
     {
-      "source": "CONCLUSION_18_1",
+      "source": "METHOD_18_1",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -8774,7 +9157,7 @@
       ]
     },
     {
-      "source": "CONCLUSION_18_1",
+      "source": "METHOD_18_1",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -8782,7 +9165,7 @@
       ]
     },
     {
-      "source": "CONCLUSION_18_1",
+      "source": "METHOD_18_1",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -8790,7 +9173,7 @@
       ]
     },
     {
-      "source": "CONCLUSION_18_1",
+      "source": "METHOD_18_1",
       "target": "entity_transformer",
       "label": "MENTIONS",
       "chunks": [
@@ -8831,8 +9214,8 @@
     },
     {
       "source": "source_20",
-      "target": "CLAIM_20_3",
-      "label": "EXTRACTED_FROM",
+      "target": "FACT_20_3",
+      "label": "CONTAINS_FACT",
       "chunks": [
         20
       ]
@@ -8840,6 +9223,30 @@
     {
       "source": "source_20",
       "target": "CLAIM_20_5",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "source_20",
+      "target": "FACT_20_7",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "source_20",
+      "target": "FACT_20_9",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "source_20",
+      "target": "CLAIM_20_11",
       "label": "EXTRACTED_FROM",
       "chunks": [
         20
@@ -8854,7 +9261,23 @@
       ]
     },
     {
-      "source": "CLAIM_20_3",
+      "source": "FACT_20_3",
+      "target": "entity_encoder",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "FACT_20_3",
+      "target": "entity_stack",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "CLAIM_20_5",
       "target": "entity_each layer",
       "label": "MENTIONS",
       "chunks": [
@@ -8862,7 +9285,39 @@
       ]
     },
     {
-      "source": "CLAIM_20_5",
+      "source": "FACT_20_7",
+      "target": "entity_each layer",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "FACT_20_7",
+      "target": "entity_two sub",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "FACT_20_9",
+      "target": "entity_each layer",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "FACT_20_9",
+      "target": "entity_layers",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "CLAIM_20_11",
       "target": "entity_attention mechanism",
       "label": "MENTIONS",
       "chunks": [
@@ -8870,7 +9325,7 @@
       ]
     },
     {
-      "source": "CLAIM_20_5",
+      "source": "CLAIM_20_11",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -8887,7 +9342,7 @@
     },
     {
       "source": "source_21",
-      "target": "CLAIM_21_3",
+      "target": "METHOD_21_3",
       "label": "EXTRACTED_FROM",
       "chunks": [
         21
@@ -8910,7 +9365,7 @@
       ]
     },
     {
-      "source": "CLAIM_21_3",
+      "source": "METHOD_21_3",
       "target": "entity_layer normalization",
       "label": "MENTIONS",
       "chunks": [
@@ -8918,7 +9373,7 @@
       ]
     },
     {
-      "source": "CLAIM_21_3",
+      "source": "METHOD_21_3",
       "target": "entity_residual connection",
       "label": "MENTIONS",
       "chunks": [
@@ -8951,7 +9406,15 @@
     },
     {
       "source": "source_23",
-      "target": "CLAIM_23_3",
+      "target": "FACT_23_3",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        23
+      ]
+    },
+    {
+      "source": "source_23",
+      "target": "CLAIM_23_5",
       "label": "EXTRACTED_FROM",
       "chunks": [
         23
@@ -8959,15 +9422,7 @@
     },
     {
       "source": "source_23",
-      "target": "CLAIM_23_6",
-      "label": "EXTRACTED_FROM",
-      "chunks": [
-        23
-      ]
-    },
-    {
-      "source": "source_23",
-      "target": "CLAIM_23_8",
+      "target": "METHOD_23_8",
       "label": "EXTRACTED_FROM",
       "chunks": [
         23
@@ -8982,6 +9437,14 @@
       ]
     },
     {
+      "source": "source_23",
+      "target": "CLAIM_23_12",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        23
+      ]
+    },
+    {
       "source": "CLAIM_23_1",
       "target": "entity_decoder",
       "label": "MENTIONS",
@@ -8990,7 +9453,23 @@
       ]
     },
     {
-      "source": "CLAIM_23_3",
+      "source": "FACT_23_3",
+      "target": "entity_decoder",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        23
+      ]
+    },
+    {
+      "source": "FACT_23_3",
+      "target": "entity_stack",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        23
+      ]
+    },
+    {
+      "source": "CLAIM_23_5",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -8998,7 +9477,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_3",
+      "source": "CLAIM_23_5",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9006,7 +9485,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_3",
+      "source": "CLAIM_23_5",
       "target": "entity_multi-head attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9014,7 +9493,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_6",
+      "source": "METHOD_23_8",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9022,7 +9501,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_6",
+      "source": "METHOD_23_8",
       "target": "entity_layer normalization",
       "label": "MENTIONS",
       "chunks": [
@@ -9030,7 +9509,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_8",
+      "source": "CLAIM_23_10",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9038,7 +9517,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_8",
+      "source": "CLAIM_23_10",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9046,7 +9525,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_10",
+      "source": "CLAIM_23_12",
       "target": "entity_this masking",
       "label": "MENTIONS",
       "chunks": [
@@ -9159,7 +9638,23 @@
     },
     {
       "source": "source_27",
-      "target": "CLAIM_27_6",
+      "target": "FACT_27_6",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        27
+      ]
+    },
+    {
+      "source": "source_27",
+      "target": "FACT_27_8",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        27
+      ]
+    },
+    {
+      "source": "source_27",
+      "target": "METHOD_27_10",
       "label": "EXTRACTED_FROM",
       "chunks": [
         27
@@ -9190,7 +9685,39 @@
       ]
     },
     {
-      "source": "CLAIM_27_6",
+      "source": "FACT_27_6",
+      "target": "entity_input",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        27
+      ]
+    },
+    {
+      "source": "FACT_27_6",
+      "target": "entity_queries",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        27
+      ]
+    },
+    {
+      "source": "FACT_27_8",
+      "target": "entity_input",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        27
+      ]
+    },
+    {
+      "source": "FACT_27_8",
+      "target": "entity_keys",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        27
+      ]
+    },
+    {
+      "source": "METHOD_27_10",
       "target": "entity_k v",
       "label": "MENTIONS",
       "chunks": [
@@ -9255,7 +9782,7 @@
     },
     {
       "source": "source_31",
-      "target": "CLAIM_31_1",
+      "target": "METHOD_31_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         31
@@ -9263,14 +9790,14 @@
     },
     {
       "source": "source_31",
-      "target": "CLAIM_31_4",
+      "target": "METHOD_31_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         31
       ]
     },
     {
-      "source": "CLAIM_31_1",
+      "source": "METHOD_31_1",
       "target": "entity_q. k v",
       "label": "MENTIONS",
       "chunks": [
@@ -9278,7 +9805,7 @@
       ]
     },
     {
-      "source": "CLAIM_31_1",
+      "source": "METHOD_31_1",
       "target": "entity_keys",
       "label": "MENTIONS",
       "chunks": [
@@ -9359,14 +9886,14 @@
     },
     {
       "source": "source_36",
-      "target": "CLAIM_36_2",
+      "target": "METHOD_36_2",
       "label": "EXTRACTED_FROM",
       "chunks": [
         36
       ]
     },
     {
-      "source": "CLAIM_36_2",
+      "source": "METHOD_36_2",
       "target": "entity_softmax",
       "label": "MENTIONS",
       "chunks": [
@@ -9454,6 +9981,54 @@
       ]
     },
     {
+      "source": "source_40",
+      "target": "FACT_40_3",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        40
+      ]
+    },
+    {
+      "source": "source_40",
+      "target": "FACT_40_6",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        40
+      ]
+    },
+    {
+      "source": "FACT_40_3",
+      "target": "entity_their dot product, q \u00b7 k = k q k",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        40
+      ]
+    },
+    {
+      "source": "FACT_40_3",
+      "target": "entity_mean",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        40
+      ]
+    },
+    {
+      "source": "FACT_40_6",
+      "target": "entity_their dot product, q \u00b7 k = k q k",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        40
+      ]
+    },
+    {
+      "source": "FACT_40_6",
+      "target": "entity_variance d",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        40
+      ]
+    },
+    {
       "source": "source_41",
       "target": "CLAIM_41_1",
       "label": "EXTRACTED_FROM",
@@ -9511,7 +10086,7 @@
     },
     {
       "source": "source_42",
-      "target": "CLAIM_42_4",
+      "target": "METHOD_42_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         42
@@ -9567,22 +10142,14 @@
     },
     {
       "source": "source_44",
-      "target": "CLAIM_44_1",
+      "target": "METHOD_44_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         44
       ]
     },
     {
-      "source": "source_44",
-      "target": "FACT_44_4",
-      "label": "CONTAINS_FACT",
-      "chunks": [
-        44
-      ]
-    },
-    {
-      "source": "CLAIM_44_1",
+      "source": "METHOD_44_1",
       "target": "entity_multi-head attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9590,25 +10157,9 @@
       ]
     },
     {
-      "source": "CLAIM_44_1",
+      "source": "METHOD_44_1",
       "target": "entity_transformer",
       "label": "MENTIONS",
-      "chunks": [
-        44
-      ]
-    },
-    {
-      "source": "FACT_44_4",
-      "target": "entity_transformer",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        44
-      ]
-    },
-    {
-      "source": "FACT_44_4",
-      "target": "entity_multi-head attention",
-      "label": "HAS_OBJECT",
       "chunks": [
         44
       ]
@@ -9647,15 +10198,15 @@
     },
     {
       "source": "source_45",
-      "target": "CLAIM_45_9",
-      "label": "EXTRACTED_FROM",
+      "target": "FACT_45_9",
+      "label": "CONTAINS_FACT",
       "chunks": [
         45
       ]
     },
     {
       "source": "source_45",
-      "target": "CLAIM_45_10",
+      "target": "CLAIM_45_11",
       "label": "EXTRACTED_FROM",
       "chunks": [
         45
@@ -9671,7 +10222,7 @@
     },
     {
       "source": "source_45",
-      "target": "CLAIM_45_13",
+      "target": "CLAIM_45_14",
       "label": "EXTRACTED_FROM",
       "chunks": [
         45
@@ -9679,7 +10230,7 @@
     },
     {
       "source": "source_45",
-      "target": "METHOD_45_14",
+      "target": "CLAIM_45_15",
       "label": "EXTRACTED_FROM",
       "chunks": [
         45
@@ -9687,7 +10238,15 @@
     },
     {
       "source": "source_45",
-      "target": "CLAIM_45_17",
+      "target": "METHOD_45_16",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        45
+      ]
+    },
+    {
+      "source": "source_45",
+      "target": "CLAIM_45_19",
       "label": "EXTRACTED_FROM",
       "chunks": [
         45
@@ -9758,7 +10317,23 @@
       ]
     },
     {
-      "source": "CLAIM_45_9",
+      "source": "FACT_45_9",
+      "target": "entity_encoder",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        45
+      ]
+    },
+    {
+      "source": "FACT_45_9",
+      "target": "entity_self-attention layers",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        45
+      ]
+    },
+    {
+      "source": "CLAIM_45_11",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9766,7 +10341,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_9",
+      "source": "CLAIM_45_11",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9774,7 +10349,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_10",
+      "source": "CLAIM_45_12",
       "target": "entity_each position",
       "label": "MENTIONS",
       "chunks": [
@@ -9782,7 +10357,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_10",
+      "source": "CLAIM_45_12",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9790,7 +10365,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_12",
+      "source": "CLAIM_45_14",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9798,7 +10373,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_12",
+      "source": "CLAIM_45_14",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9806,7 +10381,7 @@
       ]
     },
     {
-      "source": "CLAIM_45_13",
+      "source": "CLAIM_45_15",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9814,7 +10389,7 @@
       ]
     },
     {
-      "source": "METHOD_45_14",
+      "source": "METHOD_45_16",
       "target": "entity_scaled dot-product attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9822,7 +10397,7 @@
       ]
     },
     {
-      "source": "METHOD_45_14",
+      "source": "METHOD_45_16",
       "target": "entity_softmax",
       "label": "MENTIONS",
       "chunks": [
@@ -9934,9 +10509,33 @@
       ]
     },
     {
+      "source": "source_49",
+      "target": "FACT_49_5",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        49
+      ]
+    },
+    {
       "source": "CLAIM_49_2",
       "target": "entity_another way",
       "label": "MENTIONS",
+      "chunks": [
+        49
+      ]
+    },
+    {
+      "source": "FACT_49_5",
+      "target": "entity_inner-layer",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        49
+      ]
+    },
+    {
+      "source": "FACT_49_5",
+      "target": "entity_dimensionality model",
+      "label": "HAS_OBJECT",
       "chunks": [
         49
       ]
@@ -9975,7 +10574,7 @@
     },
     {
       "source": "source_51",
-      "target": "CLAIM_51_7",
+      "target": "METHOD_51_7",
       "label": "EXTRACTED_FROM",
       "chunks": [
         51
@@ -10022,7 +10621,7 @@
       ]
     },
     {
-      "source": "CLAIM_51_7",
+      "source": "METHOD_51_7",
       "target": "entity_embedding",
       "label": "MENTIONS",
       "chunks": [
@@ -10030,7 +10629,7 @@
       ]
     },
     {
-      "source": "CLAIM_51_7",
+      "source": "METHOD_51_7",
       "target": "entity_softmax",
       "label": "MENTIONS",
       "chunks": [
@@ -10071,7 +10670,23 @@
     },
     {
       "source": "source_53",
-      "target": "CLAIM_53_4",
+      "target": "FACT_53_4",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        53
+      ]
+    },
+    {
+      "source": "source_53",
+      "target": "FACT_53_7",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        53
+      ]
+    },
+    {
+      "source": "source_53",
+      "target": "METHOD_53_9",
       "label": "EXTRACTED_FROM",
       "chunks": [
         53
@@ -10089,6 +10704,38 @@
       "source": "CLAIM_53_1",
       "target": "entity_recurrence",
       "label": "MENTIONS",
+      "chunks": [
+        53
+      ]
+    },
+    {
+      "source": "FACT_53_4",
+      "target": "entity_our model",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        53
+      ]
+    },
+    {
+      "source": "FACT_53_4",
+      "target": "entity_no recurrence",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        53
+      ]
+    },
+    {
+      "source": "FACT_53_7",
+      "target": "entity_our model",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        53
+      ]
+    },
+    {
+      "source": "FACT_53_7",
+      "target": "entity_no convolution",
+      "label": "HAS_OBJECT",
       "chunks": [
         53
       ]
@@ -10183,7 +10830,15 @@
     },
     {
       "source": "source_58",
-      "target": "CLAIM_58_6",
+      "target": "FACT_58_6",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        58
+      ]
+    },
+    {
+      "source": "source_58",
+      "target": "CLAIM_58_8",
       "label": "EXTRACTED_FROM",
       "chunks": [
         58
@@ -10214,6 +10869,22 @@
       ]
     },
     {
+      "source": "FACT_58_6",
+      "target": "entity_positional encodings",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        58
+      ]
+    },
+    {
+      "source": "FACT_58_6",
+      "target": "entity_same dimension d model",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        58
+      ]
+    },
+    {
       "source": "source_59",
       "target": "METHOD_59_1",
       "label": "EXTRACTED_FROM",
@@ -10239,7 +10910,7 @@
     },
     {
       "source": "source_61",
-      "target": "CLAIM_61_2",
+      "target": "DEFINITION_61_2",
       "label": "EXTRACTED_FROM",
       "chunks": [
         61
@@ -10255,8 +10926,8 @@
     },
     {
       "source": "source_61",
-      "target": "CLAIM_61_7",
-      "label": "EXTRACTED_FROM",
+      "target": "FACT_61_7",
+      "label": "CONTAINS_FACT",
       "chunks": [
         61
       ]
@@ -10271,7 +10942,7 @@
     },
     {
       "source": "source_61",
-      "target": "CLAIM_61_10",
+      "target": "CLAIM_61_11",
       "label": "EXTRACTED_FROM",
       "chunks": [
         61
@@ -10279,14 +10950,22 @@
     },
     {
       "source": "source_61",
-      "target": "HEDGING_61_11",
+      "target": "CLAIM_61_12",
       "label": "EXTRACTED_FROM",
       "chunks": [
         61
       ]
     },
     {
-      "source": "CLAIM_61_2",
+      "source": "source_61",
+      "target": "HEDGING_61_13",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        61
+      ]
+    },
+    {
+      "source": "DEFINITION_61_2",
       "target": "entity_positional encoding",
       "label": "MENTIONS",
       "chunks": [
@@ -10294,7 +10973,7 @@
       ]
     },
     {
-      "source": "CLAIM_61_2",
+      "source": "DEFINITION_61_2",
       "target": "entity_that is, each dimension",
       "label": "MENTIONS",
       "chunks": [
@@ -10310,7 +10989,23 @@
       ]
     },
     {
-      "source": "CLAIM_61_7",
+      "source": "FACT_61_7",
+      "target": "entity_wavelengths",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        61
+      ]
+    },
+    {
+      "source": "FACT_61_7",
+      "target": "entity_geometric progression",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        61
+      ]
+    },
+    {
+      "source": "CLAIM_61_9",
       "target": "entity_pe relative positions",
       "label": "MENTIONS",
       "chunks": [
@@ -10343,7 +11038,7 @@
     },
     {
       "source": "source_63",
-      "target": "CLAIM_63_7",
+      "target": "ASSUMPTION_63_7",
       "label": "EXTRACTED_FROM",
       "chunks": [
         63
@@ -10390,7 +11085,7 @@
       ]
     },
     {
-      "source": "CLAIM_63_7",
+      "source": "ASSUMPTION_63_7",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -10447,7 +11142,7 @@
     },
     {
       "source": "source_65",
-      "target": "CLAIM_65_7",
+      "target": "CONCLUSION_65_7",
       "label": "EXTRACTED_FROM",
       "chunks": [
         65
@@ -10479,7 +11174,7 @@
     },
     {
       "source": "source_66",
-      "target": "CLAIM_66_4",
+      "target": "COMPARISON_66_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         66
@@ -10502,7 +11197,7 @@
       ]
     },
     {
-      "source": "CLAIM_66_4",
+      "source": "COMPARISON_66_4",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -10510,7 +11205,7 @@
       ]
     },
     {
-      "source": "CLAIM_66_4",
+      "source": "COMPARISON_66_4",
       "target": "entity_word-piece",
       "label": "MENTIONS",
       "chunks": [
@@ -10806,6 +11501,14 @@
       ]
     },
     {
+      "source": "source_75",
+      "target": "FACT_75_13",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        75
+      ]
+    },
+    {
       "source": "CLAIM_75_1",
       "target": "entity_wmt",
       "label": "MENTIONS",
@@ -10865,6 +11568,22 @@
       "source": "CLAIM_75_11",
       "target": "entity_each training batch",
       "label": "MENTIONS",
+      "chunks": [
+        75
+      ]
+    },
+    {
+      "source": "FACT_75_13",
+      "target": "entity_each training batch",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        75
+      ]
+    },
+    {
+      "source": "FACT_75_13",
+      "target": "entity_set",
+      "label": "HAS_OBJECT",
       "chunks": [
         75
       ]
@@ -11183,7 +11902,7 @@
     },
     {
       "source": "source_81",
-      "target": "CLAIM_81_1",
+      "target": "DEFINITION_81_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         81
@@ -11207,7 +11926,7 @@
     },
     {
       "source": "source_83",
-      "target": "CLAIM_83_1",
+      "target": "METHOD_83_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         83
@@ -11215,7 +11934,7 @@
     },
     {
       "source": "source_84",
-      "target": "CLAIM_84_1",
+      "target": "METHOD_84_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         84
@@ -11231,7 +11950,7 @@
     },
     {
       "source": "source_84",
-      "target": "CLAIM_84_4",
+      "target": "METHOD_84_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         84
@@ -11246,7 +11965,7 @@
       ]
     },
     {
-      "source": "CLAIM_84_1",
+      "source": "METHOD_84_1",
       "target": "entity_dropout",
       "label": "MENTIONS",
       "chunks": [
@@ -11254,7 +11973,7 @@
       ]
     },
     {
-      "source": "CLAIM_84_4",
+      "source": "METHOD_84_4",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -11262,7 +11981,7 @@
       ]
     },
     {
-      "source": "CLAIM_84_4",
+      "source": "METHOD_84_4",
       "target": "entity_dropout",
       "label": "MENTIONS",
       "chunks": [
@@ -11270,7 +11989,7 @@
       ]
     },
     {
-      "source": "CLAIM_84_4",
+      "source": "METHOD_84_4",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -11326,6 +12045,14 @@
       ]
     },
     {
+      "source": "CLAIM_91_1",
+      "target": "entity_deep-att",
+      "label": "MENTIONS",
+      "chunks": [
+        91
+      ]
+    },
+    {
       "source": "source_94",
       "target": "CLAIM_94_1",
       "label": "EXTRACTED_FROM",
@@ -11337,14 +12064,6 @@
       "source": "source_94",
       "target": "RESULT_94_4",
       "label": "EXTRACTED_FROM",
-      "chunks": [
-        94
-      ]
-    },
-    {
-      "source": "source_94",
-      "target": "FACT_94_9",
-      "label": "CONTAINS_FACT",
       "chunks": [
         94
       ]
@@ -11393,22 +12112,6 @@
       "source": "RESULT_94_4",
       "target": "entity_this ls",
       "label": "MENTIONS",
-      "chunks": [
-        94
-      ]
-    },
-    {
-      "source": "FACT_94_9",
-      "target": "entity_this ls",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        94
-      ]
-    },
-    {
-      "source": "FACT_94_9",
-      "target": "entity_perplexity",
-      "label": "HAS_OBJECT",
       "chunks": [
         94
       ]
@@ -11631,7 +12334,7 @@
     },
     {
       "source": "source_98",
-      "target": "CLAIM_98_9",
+      "target": "METHOD_98_9",
       "label": "EXTRACTED_FROM",
       "chunks": [
         98
@@ -11679,14 +12382,14 @@
     },
     {
       "source": "source_99",
-      "target": "CLAIM_99_2",
+      "target": "METHOD_99_2",
       "label": "EXTRACTED_FROM",
       "chunks": [
         99
       ]
     },
     {
-      "source": "CLAIM_99_2",
+      "source": "METHOD_99_2",
       "target": "entity_each gpu",
       "label": "MENTIONS",
       "chunks": [
@@ -11694,7 +12397,7 @@
       ]
     },
     {
-      "source": "CLAIM_99_2",
+      "source": "METHOD_99_2",
       "target": "entity_gpu",
       "label": "MENTIONS",
       "chunks": [
@@ -11702,7 +12405,7 @@
       ]
     },
     {
-      "source": "CLAIM_99_2",
+      "source": "METHOD_99_2",
       "target": "entity_gpus",
       "label": "MENTIONS",
       "chunks": [
@@ -11727,7 +12430,7 @@
     },
     {
       "source": "source_101",
-      "target": "CLAIM_101_4",
+      "target": "LIMITATION_101_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         101
@@ -11758,7 +12461,7 @@
       ]
     },
     {
-      "source": "CLAIM_101_4",
+      "source": "LIMITATION_101_4",
       "target": "entity_beam search",
       "label": "MENTIONS",
       "chunks": [
@@ -11767,7 +12470,7 @@
     },
     {
       "source": "source_102",
-      "target": "CLAIM_102_1",
+      "target": "METHOD_102_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         102
@@ -11790,7 +12493,7 @@
       ]
     },
     {
-      "source": "CLAIM_102_1",
+      "source": "METHOD_102_1",
       "target": "entity_value",
       "label": "MENTIONS",
       "chunks": [
@@ -11959,7 +12662,7 @@
     },
     {
       "source": "source_109",
-      "target": "CLAIM_109_6",
+      "target": "METHOD_109_6",
       "label": "EXTRACTED_FROM",
       "chunks": [
         109
@@ -11990,7 +12693,7 @@
       ]
     },
     {
-      "source": "CLAIM_109_6",
+      "source": "METHOD_109_6",
       "target": "entity_positional encoding",
       "label": "MENTIONS",
       "chunks": [
@@ -11999,14 +12702,14 @@
     },
     {
       "source": "source_110",
-      "target": "CLAIM_110_1",
+      "target": "RESULT_110_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         110
       ]
     },
     {
-      "source": "CLAIM_110_1",
+      "source": "RESULT_110_1",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -12014,7 +12717,7 @@
       ]
     },
     {
-      "source": "CLAIM_110_1",
+      "source": "RESULT_110_1",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -12022,7 +12725,7 @@
       ]
     },
     {
-      "source": "CLAIM_110_1",
+      "source": "RESULT_110_1",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -12030,7 +12733,7 @@
       ]
     },
     {
-      "source": "CLAIM_110_1",
+      "source": "RESULT_110_1",
       "target": "entity_sequence transduction",
       "label": "MENTIONS",
       "chunks": [
@@ -12038,7 +12741,7 @@
       ]
     },
     {
-      "source": "CLAIM_110_1",
+      "source": "RESULT_110_1",
       "target": "entity_transformer",
       "label": "MENTIONS",
       "chunks": [
@@ -12047,7 +12750,7 @@
     },
     {
       "source": "source_111",
-      "target": "CLAIM_111_1",
+      "target": "COMPARISON_111_1",
       "label": "EXTRACTED_FROM",
       "chunks": [
         111
@@ -12055,7 +12758,7 @@
     },
     {
       "source": "source_111",
-      "target": "CLAIM_111_3",
+      "target": "RESULT_111_3",
       "label": "EXTRACTED_FROM",
       "chunks": [
         111
@@ -12070,7 +12773,7 @@
       ]
     },
     {
-      "source": "CLAIM_111_1",
+      "source": "COMPARISON_111_1",
       "target": "entity_transformer",
       "label": "MENTIONS",
       "chunks": [
@@ -12078,7 +12781,7 @@
       ]
     },
     {
-      "source": "CLAIM_111_3",
+      "source": "RESULT_111_3",
       "target": "entity_wmt",
       "label": "MENTIONS",
       "chunks": [

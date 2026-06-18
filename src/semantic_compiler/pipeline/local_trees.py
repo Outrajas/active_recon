@@ -57,20 +57,43 @@ class LocalTreesStage:
                         G.add_node(ent_node, type="ENTITY", text=canonical)
                     G.add_edge(sem_node_id, ent_node, label="MENTIONS", confidence=confidence)
 
+                # --- DIAGNOSTIC: raw facts ---
+                print(f"[RAW] Chunk {chunk_id}: {len(facts)} facts: {facts}")
+
                 # Process relation-based facts
                 for fact in facts:
+                    # --- DIAGNOSTIC: processing fact ---
+                    print(f"[PROCESS] Fact: {fact}")
+
                     subj = fact['subject']
                     objt = fact['object']
                     rel = fact['relation']
                     evidence = fact.get('evidence', text)
-                    if not self.validator._is_valid(subj) or not self.validator._is_valid(objt):
+
+                    # Validate with reason logging
+                    subj_valid, subj_reason = self.validator._is_valid_with_reason(subj)
+                    objt_valid, objt_reason = self.validator._is_valid_with_reason(objt)
+                    if not subj_valid:
+                        print(f"[REJECTED] subject '{subj}' invalid: {subj_reason}")
+                    if not objt_valid:
+                        print(f"[REJECTED] object '{objt}' invalid: {objt_reason}")
+                    if not subj_valid or not objt_valid:
+                        print(f"[DROPPED] Fact discarded: {fact}")
                         continue
+
                     subj_canon = canonical_name(subj)
                     objt_canon = canonical_name(objt)
+                    if not is_valid_entity(subj_canon):
+                        print(f"[REJECTED] subj_canon '{subj_canon}' not a valid entity")
+                        continue
+                    if not is_valid_entity(objt_canon):
+                        print(f"[REJECTED] objt_canon '{objt_canon}' not a valid entity")
+                        continue
+
                     fact_id = f"FACT_{chunk_id}_{len(G.nodes)}"
                     G.add_node(fact_id, type="FACT",
                                subject=subj_canon, relation=rel, object=objt_canon,
-                               confidence=fact['confidence'], source_chunk=chunk_id, section=attrs['section'],
+                               confidence=fact.get('confidence', 0.85), source_chunk=chunk_id, section=attrs['section'],
                                evidence=evidence)
                     if is_valid_entity(subj_canon):
                         subj_node = f"entity_{subj_canon}"
@@ -98,6 +121,11 @@ class LocalTreesStage:
                         ent_node = f"entity_{metric_entity}"
                         if ent_node not in G: G.add_node(ent_node, type="ENTITY", text=metric_entity)
                         G.add_edge(metric_id, ent_node, label="MEASURES", confidence=metric['confidence'])
+
+            # --- DIAGNOSTIC: final counts ---
+            total_extracted = sum(len(obj.get('facts', [])) for obj in objects)
+            fact_nodes = sum(1 for _, d in G.nodes(data=True) if d.get('type') == 'FACT')
+            print(f"[DIAG] Chunk {chunk_id}: facts_extracted={total_extracted}, fact_nodes_created={fact_nodes}")
 
             local_graphs[chunk_id] = G
         return local_graphs
