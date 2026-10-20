@@ -38,18 +38,35 @@ class StructuralRelationExtractor:
                 return "transformer"
             return text_lower
 
-        def get_noun_chunk(token):
-            # Find the noun chunk containing this token
+        def get_noun_phrase(token):
+            """
+            Return the full noun phrase containing the token, with prepositional modifiers.
+            If the token is not inside a noun chunk, return its subtree span.
+            """
+            # Find the noun chunk that contains this token
             for chunk in doc.noun_chunks:
                 if chunk.start <= token.i < chunk.end:
-                    return chunk.text
-            # Fallback to span
+                    # Get the chunk text
+                    chunk_text = chunk.text
+                    # Check if the chunk's head has a prepositional modifier (of/with)
+                    head = chunk.root
+                    # If head is a noun, check children for prep
+                    if head.pos_ in ("NOUN", "PROPN"):
+                        for child in head.children:
+                            if child.dep_ == "prep" and child.lemma_ in ("of", "with"):
+                                # Include the prepositional phrase by extending the span
+                                expanded = doc[chunk.start : child.right_edge.i + 1].text
+                                return expanded
+                    return chunk_text
+            # Fallback: use the token's subtree span
             return doc[token.left_edge.i : token.right_edge.i + 1].text
 
         def split_coordinated(phrase):
-            # Split on " and " and ", " to get individual conjuncts
+            """Split a phrase on ' and ' and commas to get separate conjuncts."""
+            # Split on ' and ' (case‑insensitive) and on commas, but preserve phrases
             parts = []
-            # First split on " and " (case insensitive)
+            # Use re.split with capturing groups to keep the separators? Not needed.
+            # First split on ' and '
             for part in re.split(r'\s+and\s+', phrase, flags=re.IGNORECASE):
                 # Then split on commas
                 for subpart in re.split(r'\s*,\s*', part):
@@ -79,7 +96,7 @@ class StructuralRelationExtractor:
             if subj_tok.text.lower() in self.pronouns:
                 continue
 
-            subj_span = get_noun_chunk(subj_tok)
+            subj_span = get_noun_phrase(subj_tok)
             subj_concept = find_concept(subj_span)
 
             # Objects (direct or via preposition)
@@ -95,7 +112,7 @@ class StructuralRelationExtractor:
             if not obj_tokens:
                 continue
 
-            # Expand with conjuncts but avoid over-expansion; we'll use split_coordinated later
+            # Expand with conjuncts
             expanded_objs = []
             for obj_tok in obj_tokens:
                 queue = [obj_tok]
@@ -110,6 +127,7 @@ class StructuralRelationExtractor:
                         if conj.i not in seen:
                             queue.append(conj)
 
+            # Deduplicate object tokens
             unique_objs = []
             seen_indices = set()
             for tok in expanded_objs:
@@ -118,20 +136,17 @@ class StructuralRelationExtractor:
                     unique_objs.append(tok)
 
             for obj_tok in unique_objs:
-                obj_span = get_noun_chunk(obj_tok)
+                obj_span = get_noun_phrase(obj_tok)
                 obj_span = obj_span.strip().rstrip(',').rstrip(';')
                 if not obj_span:
                     continue
 
-                # --- Split coordinated objects ---
-                # We'll split on " and " and "," to get individual entities
-                # But we need to be careful: if the span contains "stack of X", we don't want to split that.
-                # So we only split if the span doesn't contain "of" or "with" (prepositional phrases)
-                # Heuristic: if "of" or "with" appears, treat as a single phrase.
+                # Decide whether to split coordinated objects.
+                # If the span contains "of" or "with", treat as a single phrase.
                 if re.search(r'\b(of|with)\b', obj_span, re.IGNORECASE):
-                    # Single phrase, do not split
                     split_parts = [obj_span]
                 else:
+                    # Split on " and " and commas to get individual conjuncts
                     split_parts = split_coordinated(obj_span)
 
                 for part in split_parts:
@@ -142,7 +157,7 @@ class StructuralRelationExtractor:
                     if subj_concept == obj_concept:
                         continue
 
-                    # Noun‑level negation
+                    # Noun‑level negation (if "no" appears in the subtree)
                     if any(tok.text.lower() == "no" for tok in obj_tok.subtree):
                         if not has_neg:
                             relation = "DOES_NOT_" + self.verb_map[token.lemma_]
@@ -163,7 +178,7 @@ class StructuralRelationExtractor:
                         "fact_type": "STRUCTURAL"
                     })
 
-        # Deduplicate
+        # Deduplicate exact triples
         seen = set()
         unique_facts = []
         for f in facts:

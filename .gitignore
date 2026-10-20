@@ -1,14 +1,27 @@
-﻿venv/
+﻿# --- Python artifacts ---
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
 
-models/base/
-models/checkpoints/
-models/final/
-
-outputs/
-
-
+# --- HuggingFace Model Weights (DO NOT PUSH TO GIT) ---
+models/
 *.safetensors
-*.pt
 *.bin
+*.pt
+
+# --- Large Data Artifacts ---
+data/raw/
+data/processed/
+data/datasets/
+data/global_graph.json
+!data/.gitkeep
+
+# --- Environment & Configs ---
+.env
+.DS_Store
+.vscode/
+.idea/

@@ -59,14 +59,7 @@
       }
     ],
     [
-      "entity_wmt",
-      {
-        "type": "ENTITY",
-        "text": "wmt"
-      }
-    ],
-    [
-      "METRIC_1_6",
+      "METRIC_1_5",
       {
         "type": "METRIC",
         "metric": "bleu",
@@ -137,7 +130,7 @@
       }
     ],
     [
-      "METRIC_2_8",
+      "METRIC_2_7",
       {
         "type": "METRIC",
         "metric": "days",
@@ -156,7 +149,7 @@
       }
     ],
     [
-      "METRIC_2_10",
+      "METRIC_2_9",
       {
         "type": "METRIC",
         "metric": "days",
@@ -281,13 +274,6 @@
       }
     ],
     [
-      "entity_llion",
-      {
-        "type": "ENTITY",
-        "text": "llion"
-      }
-    ],
-    [
       "source_7",
       {
         "type": "source_chunk",
@@ -368,14 +354,7 @@
       }
     ],
     [
-      "entity_parallelization",
-      {
-        "type": "ENTITY",
-        "text": "parallelization"
-      }
-    ],
-    [
-      "CLAIM_8_7",
+      "CLAIM_8_6",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -393,7 +372,7 @@
       }
     ],
     [
-      "NONE_8_9",
+      "NONE_8_8",
       {
         "semantic_role": "NONE",
         "document_role": "BIBLIOGRAPHY",
@@ -404,7 +383,7 @@
       }
     ],
     [
-      "LIMITATION_8_10",
+      "LIMITATION_8_9",
       {
         "semantic_role": "LIMITATION",
         "document_role": "MAIN_CONTENT",
@@ -491,13 +470,6 @@
       }
     ],
     [
-      "entity_recurrence",
-      {
-        "type": "ENTITY",
-        "text": "recurrence"
-      }
-    ],
-    [
       "entity_transformer",
       {
         "type": "ENTITY",
@@ -505,7 +477,7 @@
       }
     ],
     [
-      "CLAIM_10_5",
+      "CLAIM_10_4",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -516,7 +488,7 @@
       }
     ],
     [
-      "METRIC_10_7",
+      "METRIC_10_5",
       {
         "type": "METRIC",
         "metric": "gpus",
@@ -535,7 +507,7 @@
       }
     ],
     [
-      "METRIC_10_9",
+      "METRIC_10_7",
       {
         "type": "METRIC",
         "metric": "gpus",
@@ -569,13 +541,6 @@
       }
     ],
     [
-      "entity_gpu",
-      {
-        "type": "ENTITY",
-        "text": "gpu"
-      }
-    ],
-    [
       "entity_extended neural gpu",
       {
         "type": "ENTITY",
@@ -583,19 +548,12 @@
       }
     ],
     [
-      "entity_goal",
-      {
-        "type": "ENTITY",
-        "text": "goal"
-      }
-    ],
-    [
-      "FACT_11_5",
+      "FACT_11_3",
       {
         "type": "FACT",
-        "subject": "goal",
+        "subject": "goal of reducing sequential computation",
         "relation": "CONTAINS",
-        "object": "foundation",
+        "object": "foundation of the extended neural gpu",
         "confidence": 0.85,
         "source_chunk": 11,
         "section": "2 Background",
@@ -603,10 +561,17 @@
       }
     ],
     [
-      "entity_foundation",
+      "entity_goal of reducing sequential computation",
       {
         "type": "ENTITY",
-        "text": "foundation"
+        "text": "goal of reducing sequential computation"
+      }
+    ],
+    [
+      "entity_foundation of the extended neural gpu",
+      {
+        "type": "ENTITY",
+        "text": "foundation of the extended neural gpu"
       }
     ],
     [
@@ -643,21 +608,7 @@
       }
     ],
     [
-      "entity_bytenet",
-      {
-        "type": "ENTITY",
-        "text": "bytenet"
-      }
-    ],
-    [
-      "entity_convs2s",
-      {
-        "type": "ENTITY",
-        "text": "convs2s"
-      }
-    ],
-    [
-      "CLAIM_12_5",
+      "CLAIM_12_3",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -668,7 +619,7 @@
       }
     ],
     [
-      "CLAIM_12_6",
+      "CLAIM_12_4",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -770,13 +721,6 @@
       }
     ],
     [
-      "entity_convolution",
-      {
-        "type": "ENTITY",
-        "text": "convolution"
-      }
-    ],
-    [
       "entity_sequence- aligned rnns",
       {
         "type": "ENTITY",
@@ -784,7 +728,7 @@
       }
     ],
     [
-      "CLAIM_15_6",
+      "CLAIM_15_5",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1002,7 +946,7 @@
         "type": "FACT",
         "subject": "encoder",
         "relation": "CONTAINS",
-        "object": "stack",
+        "object": "6 identical layers",
         "confidence": 0.85,
         "source_chunk": 20,
         "section": "2 Background",
@@ -1010,14 +954,34 @@
       }
     ],
     [
-      "entity_stack",
+      "entity_6 identical layers",
       {
         "type": "ENTITY",
-        "text": "stack"
+        "text": "6 identical layers"
       }
     ],
     [
-      "CLAIM_20_5",
+      "FACT_20_5",
+      {
+        "type": "FACT",
+        "subject": "encoder",
+        "relation": "CONTAINS",
+        "object": "stack of n",
+        "confidence": 0.85,
+        "source_chunk": 20,
+        "section": "2 Background",
+        "evidence": "Encoder: The encoder is composed of a stack of N = 6 identical layers."
+      }
+    ],
+    [
+      "entity_stack of n",
+      {
+        "type": "ENTITY",
+        "text": "stack of n"
+      }
+    ],
+    [
+      "CLAIM_20_7",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1035,7 +999,7 @@
       }
     ],
     [
-      "FACT_20_7",
+      "FACT_20_9",
       {
         "type": "FACT",
         "subject": "each layer",
@@ -1052,26 +1016,6 @@
       {
         "type": "ENTITY",
         "text": "two sub"
-      }
-    ],
-    [
-      "FACT_20_9",
-      {
-        "type": "FACT",
-        "subject": "each layer",
-        "relation": "CONTAINS",
-        "object": "layers",
-        "confidence": 0.85,
-        "source_chunk": 20,
-        "section": "2 Background",
-        "evidence": "Each layer has two sub-layers."
-      }
-    ],
-    [
-      "entity_layers",
-      {
-        "type": "ENTITY",
-        "text": "layers"
       }
     ],
     [
@@ -1173,13 +1117,6 @@
       }
     ],
     [
-      "entity_embedding",
-      {
-        "type": "ENTITY",
-        "text": "embedding"
-      }
-    ],
-    [
       "source_23",
       {
         "type": "source_chunk",
@@ -1207,7 +1144,7 @@
         "type": "FACT",
         "subject": "decoder",
         "relation": "CONTAINS",
-        "object": "stack",
+        "object": "6 identical layers",
         "confidence": 0.85,
         "source_chunk": 23,
         "section": "2 Background",
@@ -1215,7 +1152,20 @@
       }
     ],
     [
-      "CLAIM_23_5",
+      "FACT_23_5",
+      {
+        "type": "FACT",
+        "subject": "decoder",
+        "relation": "CONTAINS",
+        "object": "stack of n",
+        "confidence": 0.85,
+        "source_chunk": 23,
+        "section": "2 Background",
+        "evidence": "Decoder: The decoder is also composed of a stack of N = 6 identical layers."
+      }
+    ],
+    [
+      "CLAIM_23_7",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1226,7 +1176,7 @@
       }
     ],
     [
-      "METHOD_23_8",
+      "METHOD_23_10",
       {
         "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
@@ -1237,7 +1187,7 @@
       }
     ],
     [
-      "CLAIM_23_10",
+      "CLAIM_23_12",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1248,7 +1198,7 @@
       }
     ],
     [
-      "CLAIM_23_12",
+      "CLAIM_23_14",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1317,21 +1267,7 @@
       }
     ],
     [
-      "entity_query",
-      {
-        "type": "ENTITY",
-        "text": "query"
-      }
-    ],
-    [
-      "entity_value",
-      {
-        "type": "ENTITY",
-        "text": "value"
-      }
-    ],
-    [
-      "CLAIM_25_5",
+      "CLAIM_25_3",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -1339,13 +1275,6 @@
         "confidence": 0.85,
         "source_chunk": 25,
         "section": "2 Background"
-      }
-    ],
-    [
-      "entity_output",
-      {
-        "type": "ENTITY",
-        "text": "output"
       }
     ],
     [
@@ -1418,54 +1347,7 @@
       }
     ],
     [
-      "entity_input",
-      {
-        "type": "ENTITY",
-        "text": "input"
-      }
-    ],
-    [
-      "FACT_27_6",
-      {
-        "type": "FACT",
-        "subject": "input",
-        "relation": "CONTAINS",
-        "object": "queries",
-        "confidence": 0.85,
-        "source_chunk": 27,
-        "section": "2 Background",
-        "evidence": "The input consists of queries and keys of dimension d , and values of dimension d ."
-      }
-    ],
-    [
-      "entity_queries",
-      {
-        "type": "ENTITY",
-        "text": "queries"
-      }
-    ],
-    [
-      "FACT_27_8",
-      {
-        "type": "FACT",
-        "subject": "input",
-        "relation": "CONTAINS",
-        "object": "keys",
-        "confidence": 0.85,
-        "source_chunk": 27,
-        "section": "2 Background",
-        "evidence": "The input consists of queries and keys of dimension d , and values of dimension d ."
-      }
-    ],
-    [
-      "entity_keys",
-      {
-        "type": "ENTITY",
-        "text": "keys"
-      }
-    ],
-    [
-      "METHOD_27_10",
+      "METHOD_27_5",
       {
         "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
@@ -1549,13 +1431,6 @@
       }
     ],
     [
-      "entity_softmax",
-      {
-        "type": "ENTITY",
-        "text": "softmax"
-      }
-    ],
-    [
       "source_31",
       {
         "type": "source_chunk",
@@ -1585,7 +1460,7 @@
       }
     ],
     [
-      "METHOD_31_4",
+      "METHOD_31_3",
       {
         "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
@@ -1879,7 +1754,7 @@
         "type": "FACT",
         "subject": "their dot product, q \u00b7 k = k q k",
         "relation": "CONTAINS",
-        "object": "mean",
+        "object": "variance d",
         "confidence": 0.85,
         "source_chunk": 40,
         "section": "2 Background",
@@ -1891,26 +1766,6 @@
       {
         "type": "ENTITY",
         "text": "their dot product, q \u00b7 k = k q k"
-      }
-    ],
-    [
-      "entity_mean",
-      {
-        "type": "ENTITY",
-        "text": "mean"
-      }
-    ],
-    [
-      "FACT_40_6",
-      {
-        "type": "FACT",
-        "subject": "their dot product, q \u00b7 k = k q k",
-        "relation": "CONTAINS",
-        "object": "variance d",
-        "confidence": 0.85,
-        "source_chunk": 40,
-        "section": "2 Background",
-        "evidence": "Then their dot product, q \u00b7 k = k q k , has mean 0 and variance d ."
       }
     ],
     [
@@ -1958,13 +1813,6 @@
         "confidence": 0.85,
         "source_chunk": 41,
         "section": "2 Background"
-      }
-    ],
-    [
-      "entity_kwk",
-      {
-        "type": "ENTITY",
-        "text": "kwk"
       }
     ],
     [
@@ -2247,7 +2095,7 @@
       }
     ],
     [
-      "CLAIM_45_19",
+      "CLAIM_45_18",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2324,13 +2172,6 @@
       {
         "type": "ENTITY",
         "text": "relu activation"
-      }
-    ],
-    [
-      "entity_relu",
-      {
-        "type": "ENTITY",
-        "text": "relu"
       }
     ],
     [
@@ -2478,14 +2319,7 @@
       }
     ],
     [
-      "entity_linear",
-      {
-        "type": "ENTITY",
-        "text": "linear"
-      }
-    ],
-    [
-      "METHOD_51_7",
+      "METHOD_51_5",
       {
         "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
@@ -2496,7 +2330,7 @@
       }
     ],
     [
-      "CLAIM_51_9",
+      "CLAIM_51_6",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2558,7 +2392,7 @@
       }
     ],
     [
-      "FACT_53_4",
+      "FACT_53_2",
       {
         "type": "FACT",
         "subject": "our model",
@@ -2585,7 +2419,7 @@
       }
     ],
     [
-      "FACT_53_7",
+      "FACT_53_5",
       {
         "type": "FACT",
         "subject": "our model",
@@ -2605,7 +2439,7 @@
       }
     ],
     [
-      "METHOD_53_9",
+      "METHOD_53_7",
       {
         "semantic_role": "METHOD",
         "document_role": "MAIN_CONTENT",
@@ -2902,34 +2736,7 @@
       }
     ],
     [
-      "entity_wavelengths",
-      {
-        "type": "ENTITY",
-        "text": "wavelengths"
-      }
-    ],
-    [
-      "FACT_61_7",
-      {
-        "type": "FACT",
-        "subject": "wavelengths",
-        "relation": "CONTAINS",
-        "object": "geometric progression",
-        "confidence": 0.85,
-        "source_chunk": 61,
-        "section": "2 Background",
-        "evidence": "The wavelengths form a geometric progression from 2\u03c0 to 10000\u00b72\u03c0."
-      }
-    ],
-    [
-      "entity_geometric progression",
-      {
-        "type": "ENTITY",
-        "text": "geometric progression"
-      }
-    ],
-    [
-      "CLAIM_61_9",
+      "CLAIM_61_6",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2947,7 +2754,7 @@
       }
     ],
     [
-      "CLAIM_61_11",
+      "CLAIM_61_8",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2958,7 +2765,7 @@
       }
     ],
     [
-      "CLAIM_61_12",
+      "CLAIM_61_9",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -2969,7 +2776,7 @@
       }
     ],
     [
-      "HEDGING_61_13",
+      "HEDGING_61_10",
       {
         "semantic_role": "HEDGING",
         "document_role": "MAIN_CONTENT",
@@ -2999,6 +2806,13 @@
         "confidence": 0.85,
         "source_chunk": 62,
         "section": "2 Background"
+      }
+    ],
+    [
+      "entity_4 why self-attention",
+      {
+        "type": "ENTITY",
+        "text": "4 why self-attention"
       }
     ],
     [
@@ -3428,14 +3242,7 @@
       }
     ],
     [
-      "entity_weinspectattentiondistributions",
-      {
-        "type": "ENTITY",
-        "text": "weinspectattentiondistributions"
-      }
-    ],
-    [
-      "CLAIM_71_5",
+      "CLAIM_71_4",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -3446,7 +3253,7 @@
       }
     ],
     [
-      "CERTAINTY_71_6",
+      "CERTAINTY_71_5",
       {
         "semantic_role": "CERTAINTY",
         "document_role": "MAIN_CONTENT",
@@ -3530,13 +3337,6 @@
       }
     ],
     [
-      "entity_batching",
-      {
-        "type": "ENTITY",
-        "text": "batching"
-      }
-    ],
-    [
       "entity_training data and batching",
       {
         "type": "ENTITY",
@@ -3566,7 +3366,7 @@
       }
     ],
     [
-      "CLAIM_75_3",
+      "CLAIM_75_2",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -3577,21 +3377,7 @@
       }
     ],
     [
-      "entity_byte",
-      {
-        "type": "ENTITY",
-        "text": "byte"
-      }
-    ],
-    [
-      "entity_sentences",
-      {
-        "type": "ENTITY",
-        "text": "sentences"
-      }
-    ],
-    [
-      "CLAIM_75_6",
+      "CLAIM_75_3",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -3609,7 +3395,7 @@
       }
     ],
     [
-      "CLAIM_75_9",
+      "CLAIM_75_6",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -3627,7 +3413,7 @@
       }
     ],
     [
-      "CLAIM_75_11",
+      "CLAIM_75_8",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -3645,12 +3431,12 @@
       }
     ],
     [
-      "FACT_75_13",
+      "FACT_75_10",
       {
         "type": "FACT",
         "subject": "each training batch",
         "relation": "CONTAINS",
-        "object": "set",
+        "object": "set of sentence pairs containing approximately 25000 source tokens and 25000 target tokens",
         "confidence": 0.85,
         "source_chunk": 75,
         "section": "2 Background",
@@ -3658,10 +3444,10 @@
       }
     ],
     [
-      "entity_set",
+      "entity_set of sentence pairs containing approximately 25000 source tokens and 25000 target tokens",
       {
         "type": "ENTITY",
-        "text": "set"
+        "text": "set of sentence pairs containing approximately 25000 source tokens and 25000 target tokens"
       }
     ],
     [
@@ -3684,20 +3470,6 @@
         "confidence": 0.85,
         "source_chunk": 76,
         "section": "2 Background"
-      }
-    ],
-    [
-      "entity_hardware",
-      {
-        "type": "ENTITY",
-        "text": "hardware"
-      }
-    ],
-    [
-      "entity_schedule",
-      {
-        "type": "ENTITY",
-        "text": "schedule"
       }
     ],
     [
@@ -4363,7 +4135,7 @@
       }
     ],
     [
-      "RESULT_94_4",
+      "RESULT_94_3",
       {
         "semantic_role": "RESULT",
         "document_role": "MAIN_CONTENT",
@@ -4371,20 +4143,6 @@
         "confidence": 0.9,
         "source_chunk": 94,
         "section": "2 Background"
-      }
-    ],
-    [
-      "entity_accuracy",
-      {
-        "type": "ENTITY",
-        "text": "accuracy"
-      }
-    ],
-    [
-      "entity_perplexity",
-      {
-        "type": "ENTITY",
-        "text": "perplexity"
       }
     ],
     [
@@ -4439,7 +4197,7 @@
       }
     ],
     [
-      "RESULT_96_4",
+      "RESULT_96_3",
       {
         "semantic_role": "RESULT",
         "document_role": "MAIN_CONTENT",
@@ -4450,14 +4208,7 @@
       }
     ],
     [
-      "entity_configuration",
-      {
-        "type": "ENTITY",
-        "text": "configuration"
-      }
-    ],
-    [
-      "CLAIM_96_7",
+      "CLAIM_96_5",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -4468,18 +4219,35 @@
       }
     ],
     [
-      "entity_training",
-      {
-        "type": "ENTITY",
-        "text": "training"
-      }
-    ],
-    [
-      "METRIC_96_9",
+      "METRIC_96_6",
       {
         "type": "METRIC",
         "metric": "days",
         "value": 3.5,
+        "dataset": "unknown",
+        "confidence": 0.9,
+        "source_chunk": 96,
+        "section": "6 Results"
+      }
+    ],
+    [
+      "METRIC_96_8",
+      {
+        "type": "METRIC",
+        "metric": "gpus",
+        "value": 100.0,
+        "dataset": "unknown",
+        "confidence": 0.9,
+        "source_chunk": 96,
+        "section": "6 Results"
+      }
+    ],
+    [
+      "METRIC_96_10",
+      {
+        "type": "METRIC",
+        "metric": "days",
+        "value": 5.0,
         "dataset": "unknown",
         "confidence": 0.9,
         "source_chunk": 96,
@@ -4499,31 +4267,7 @@
       }
     ],
     [
-      "METRIC_96_13",
-      {
-        "type": "METRIC",
-        "metric": "days",
-        "value": 5.0,
-        "dataset": "unknown",
-        "confidence": 0.9,
-        "source_chunk": 96,
-        "section": "6 Results"
-      }
-    ],
-    [
-      "METRIC_96_14",
-      {
-        "type": "METRIC",
-        "metric": "gpus",
-        "value": 100.0,
-        "dataset": "unknown",
-        "confidence": 0.9,
-        "source_chunk": 96,
-        "section": "6 Results"
-      }
-    ],
-    [
-      "CLAIM_96_15",
+      "CLAIM_96_12",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -4785,7 +4529,7 @@
       }
     ],
     [
-      "RESULT_102_3",
+      "RESULT_102_2",
       {
         "semantic_role": "RESULT",
         "document_role": "MAIN_CONTENT",
@@ -4796,7 +4540,7 @@
       }
     ],
     [
-      "METRIC_102_5",
+      "METRIC_102_4",
       {
         "type": "METRIC",
         "metric": "bleu",
@@ -5120,7 +4864,7 @@
       }
     ],
     [
-      "RESULT_111_5",
+      "RESULT_111_4",
       {
         "semantic_role": "RESULT",
         "document_role": "MAIN_CONTENT",
@@ -5197,13 +4941,6 @@
       }
     ],
     [
-      "entity_code",
-      {
-        "type": "ENTITY",
-        "text": "code"
-      }
-    ],
-    [
       "source_114",
       {
         "type": "source_chunk",
@@ -5273,13 +5010,6 @@
       }
     ],
     [
-      "entity_corr",
-      {
-        "type": "ENTITY",
-        "text": "corr"
-      }
-    ],
-    [
       "source_116",
       {
         "type": "source_chunk",
@@ -5302,7 +5032,7 @@
       }
     ],
     [
-      "CLAIM_116_4",
+      "CLAIM_116_3",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -5438,13 +5168,6 @@
         "confidence": 0.85,
         "source_chunk": 121,
         "section": "References"
-      }
-    ],
-    [
-      "entity_recognition",
-      {
-        "type": "ENTITY",
-        "text": "recognition"
       }
     ],
     [
@@ -5637,13 +5360,6 @@
       }
     ],
     [
-      "entity_nips",
-      {
-        "type": "ENTITY",
-        "text": "nips"
-      }
-    ],
-    [
       "source_129",
       {
         "type": "source_chunk",
@@ -5778,13 +5494,6 @@
       }
     ],
     [
-      "entity_journal",
-      {
-        "type": "ENTITY",
-        "text": "journal"
-      }
-    ],
-    [
       "entity_journal of machine",
       {
         "type": "ENTITY",
@@ -5799,7 +5508,7 @@
       }
     ],
     [
-      "CLAIM_132_6",
+      "CLAIM_132_5",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -5896,13 +5605,6 @@
       }
     ],
     [
-      "entity_inc",
-      {
-        "type": "ENTITY",
-        "text": "inc"
-      }
-    ],
-    [
       "source_135",
       {
         "type": "source_chunk",
@@ -5965,13 +5667,6 @@
       }
     ],
     [
-      "entity_macherey",
-      {
-        "type": "ENTITY",
-        "text": "macherey"
-      }
-    ],
-    [
       "entity_maxim krikun",
       {
         "type": "ENTITY",
@@ -5993,7 +5688,7 @@
       }
     ],
     [
-      "CLAIM_136_7",
+      "CLAIM_136_6",
       {
         "semantic_role": "CLAIM",
         "document_role": "MAIN_CONTENT",
@@ -6001,13 +5696,6 @@
         "confidence": 0.85,
         "source_chunk": 136,
         "section": "References"
-      }
-    ],
-    [
-      "entity_google",
-      {
-        "type": "ENTITY",
-        "text": "google"
       }
     ],
     [
@@ -8358,7 +8046,7 @@
     },
     {
       "source": "source_1",
-      "target": "METRIC_1_6",
+      "target": "METRIC_1_5",
       "label": "CONTAINS_METRIC",
       "chunks": [
         1
@@ -8381,15 +8069,7 @@
       ]
     },
     {
-      "source": "RESULT_1_2",
-      "target": "entity_wmt",
-      "label": "MENTIONS",
-      "chunks": [
-        1
-      ]
-    },
-    {
-      "source": "METRIC_1_6",
+      "source": "METRIC_1_5",
       "target": "entity_bleu",
       "label": "MEASURES",
       "chunks": [
@@ -8422,7 +8102,7 @@
     },
     {
       "source": "source_2",
-      "target": "METRIC_2_8",
+      "target": "METRIC_2_7",
       "label": "CONTAINS_METRIC",
       "chunks": [
         2
@@ -8430,7 +8110,7 @@
     },
     {
       "source": "source_2",
-      "target": "METRIC_2_10",
+      "target": "METRIC_2_9",
       "label": "CONTAINS_METRIC",
       "chunks": [
         2
@@ -8477,15 +8157,7 @@
       ]
     },
     {
-      "source": "RESULT_2_5",
-      "target": "entity_wmt",
-      "label": "MENTIONS",
-      "chunks": [
-        2
-      ]
-    },
-    {
-      "source": "METRIC_2_8",
+      "source": "METRIC_2_7",
       "target": "entity_days",
       "label": "MEASURES",
       "chunks": [
@@ -8493,7 +8165,7 @@
       ]
     },
     {
-      "source": "METRIC_2_10",
+      "source": "METRIC_2_9",
       "target": "entity_days",
       "label": "MEASURES",
       "chunks": [
@@ -8557,14 +8229,6 @@
       ]
     },
     {
-      "source": "CLAIM_6_2",
-      "target": "entity_llion",
-      "label": "MENTIONS",
-      "chunks": [
-        6
-      ]
-    },
-    {
       "source": "source_7",
       "target": "CLAIM_7_1",
       "label": "EXTRACTED_FROM",
@@ -8598,7 +8262,7 @@
     },
     {
       "source": "source_8",
-      "target": "CLAIM_8_7",
+      "target": "CLAIM_8_6",
       "label": "EXTRACTED_FROM",
       "chunks": [
         8
@@ -8606,7 +8270,7 @@
     },
     {
       "source": "source_8",
-      "target": "NONE_8_9",
+      "target": "NONE_8_8",
       "label": "EXTRACTED_FROM",
       "chunks": [
         8
@@ -8614,7 +8278,7 @@
     },
     {
       "source": "source_8",
-      "target": "LIMITATION_8_10",
+      "target": "LIMITATION_8_9",
       "label": "EXTRACTED_FROM",
       "chunks": [
         8
@@ -8637,15 +8301,7 @@
       ]
     },
     {
-      "source": "CLAIM_8_5",
-      "target": "entity_parallelization",
-      "label": "MENTIONS",
-      "chunks": [
-        8
-      ]
-    },
-    {
-      "source": "CLAIM_8_7",
+      "source": "CLAIM_8_6",
       "target": "entity_recent work",
       "label": "MENTIONS",
       "chunks": [
@@ -8653,7 +8309,7 @@
       ]
     },
     {
-      "source": "LIMITATION_8_10",
+      "source": "LIMITATION_8_9",
       "target": "entity_fundamental constraint",
       "label": "MENTIONS",
       "chunks": [
@@ -8702,7 +8358,7 @@
     },
     {
       "source": "source_10",
-      "target": "CLAIM_10_5",
+      "target": "CLAIM_10_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         10
@@ -8710,7 +8366,7 @@
     },
     {
       "source": "source_10",
-      "target": "METRIC_10_7",
+      "target": "METRIC_10_5",
       "label": "CONTAINS_METRIC",
       "chunks": [
         10
@@ -8718,7 +8374,7 @@
     },
     {
       "source": "source_10",
-      "target": "METRIC_10_9",
+      "target": "METRIC_10_7",
       "label": "CONTAINS_METRIC",
       "chunks": [
         10
@@ -8734,14 +8390,6 @@
     },
     {
       "source": "METHOD_10_1",
-      "target": "entity_recurrence",
-      "label": "MENTIONS",
-      "chunks": [
-        10
-      ]
-    },
-    {
-      "source": "METHOD_10_1",
       "target": "entity_transformer",
       "label": "MENTIONS",
       "chunks": [
@@ -8749,15 +8397,7 @@
       ]
     },
     {
-      "source": "CLAIM_10_5",
-      "target": "entity_parallelization",
-      "label": "MENTIONS",
-      "chunks": [
-        10
-      ]
-    },
-    {
-      "source": "CLAIM_10_5",
+      "source": "CLAIM_10_4",
       "target": "entity_transformer",
       "label": "MENTIONS",
       "chunks": [
@@ -8765,7 +8405,7 @@
       ]
     },
     {
-      "source": "METRIC_10_7",
+      "source": "METRIC_10_5",
       "target": "entity_gpus",
       "label": "MEASURES",
       "chunks": [
@@ -8773,7 +8413,7 @@
       ]
     },
     {
-      "source": "METRIC_10_9",
+      "source": "METRIC_10_7",
       "target": "entity_gpus",
       "label": "MEASURES",
       "chunks": [
@@ -8790,16 +8430,8 @@
     },
     {
       "source": "source_11",
-      "target": "FACT_11_5",
+      "target": "FACT_11_3",
       "label": "CONTAINS_FACT",
-      "chunks": [
-        11
-      ]
-    },
-    {
-      "source": "CLAIM_11_1",
-      "target": "entity_gpu",
-      "label": "MENTIONS",
       "chunks": [
         11
       ]
@@ -8813,24 +8445,16 @@
       ]
     },
     {
-      "source": "CLAIM_11_1",
-      "target": "entity_goal",
-      "label": "MENTIONS",
-      "chunks": [
-        11
-      ]
-    },
-    {
-      "source": "FACT_11_5",
-      "target": "entity_goal",
+      "source": "FACT_11_3",
+      "target": "entity_goal of reducing sequential computation",
       "label": "HAS_SUBJECT",
       "chunks": [
         11
       ]
     },
     {
-      "source": "FACT_11_5",
-      "target": "entity_foundation",
+      "source": "FACT_11_3",
+      "target": "entity_foundation of the extended neural gpu",
       "label": "HAS_OBJECT",
       "chunks": [
         11
@@ -8854,7 +8478,7 @@
     },
     {
       "source": "source_12",
-      "target": "CLAIM_12_5",
+      "target": "CLAIM_12_3",
       "label": "EXTRACTED_FROM",
       "chunks": [
         12
@@ -8862,30 +8486,14 @@
     },
     {
       "source": "source_12",
-      "target": "CLAIM_12_6",
+      "target": "CLAIM_12_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         12
       ]
     },
     {
-      "source": "CLAIM_12_2",
-      "target": "entity_bytenet",
-      "label": "MENTIONS",
-      "chunks": [
-        12
-      ]
-    },
-    {
-      "source": "CLAIM_12_2",
-      "target": "entity_convs2s",
-      "label": "MENTIONS",
-      "chunks": [
-        12
-      ]
-    },
-    {
-      "source": "CLAIM_12_6",
+      "source": "CLAIM_12_4",
       "target": "entity_multi-head attention",
       "label": "MENTIONS",
       "chunks": [
@@ -8893,7 +8501,7 @@
       ]
     },
     {
-      "source": "CLAIM_12_6",
+      "source": "CLAIM_12_4",
       "target": "entity_transformer",
       "label": "MENTIONS",
       "chunks": [
@@ -8957,14 +8565,6 @@
       ]
     },
     {
-      "source": "CLAIM_14_1",
-      "target": "entity_recurrence",
-      "label": "MENTIONS",
-      "chunks": [
-        14
-      ]
-    },
-    {
       "source": "source_15",
       "target": "METHOD_15_1",
       "label": "EXTRACTED_FROM",
@@ -8974,16 +8574,8 @@
     },
     {
       "source": "source_15",
-      "target": "CLAIM_15_6",
+      "target": "CLAIM_15_5",
       "label": "EXTRACTED_FROM",
-      "chunks": [
-        15
-      ]
-    },
-    {
-      "source": "METHOD_15_1",
-      "target": "entity_convolution",
-      "label": "MENTIONS",
       "chunks": [
         15
       ]
@@ -9013,7 +8605,7 @@
       ]
     },
     {
-      "source": "CLAIM_15_6",
+      "source": "CLAIM_15_5",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9021,7 +8613,7 @@
       ]
     },
     {
-      "source": "CLAIM_15_6",
+      "source": "CLAIM_15_5",
       "target": "entity_transformer",
       "label": "MENTIONS",
       "chunks": [
@@ -9222,16 +8814,16 @@
     },
     {
       "source": "source_20",
-      "target": "CLAIM_20_5",
-      "label": "EXTRACTED_FROM",
+      "target": "FACT_20_5",
+      "label": "CONTAINS_FACT",
       "chunks": [
         20
       ]
     },
     {
       "source": "source_20",
-      "target": "FACT_20_7",
-      "label": "CONTAINS_FACT",
+      "target": "CLAIM_20_7",
+      "label": "EXTRACTED_FROM",
       "chunks": [
         20
       ]
@@ -9270,14 +8862,30 @@
     },
     {
       "source": "FACT_20_3",
-      "target": "entity_stack",
+      "target": "entity_6 identical layers",
       "label": "HAS_OBJECT",
       "chunks": [
         20
       ]
     },
     {
-      "source": "CLAIM_20_5",
+      "source": "FACT_20_5",
+      "target": "entity_encoder",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "FACT_20_5",
+      "target": "entity_stack of n",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        20
+      ]
+    },
+    {
+      "source": "CLAIM_20_7",
       "target": "entity_each layer",
       "label": "MENTIONS",
       "chunks": [
@@ -9285,7 +8893,7 @@
       ]
     },
     {
-      "source": "FACT_20_7",
+      "source": "FACT_20_9",
       "target": "entity_each layer",
       "label": "HAS_SUBJECT",
       "chunks": [
@@ -9293,24 +8901,8 @@
       ]
     },
     {
-      "source": "FACT_20_7",
+      "source": "FACT_20_9",
       "target": "entity_two sub",
-      "label": "HAS_OBJECT",
-      "chunks": [
-        20
-      ]
-    },
-    {
-      "source": "FACT_20_9",
-      "target": "entity_each layer",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        20
-      ]
-    },
-    {
-      "source": "FACT_20_9",
-      "target": "entity_layers",
       "label": "HAS_OBJECT",
       "chunks": [
         20
@@ -9389,14 +8981,6 @@
       ]
     },
     {
-      "source": "CLAIM_22_1",
-      "target": "entity_embedding",
-      "label": "MENTIONS",
-      "chunks": [
-        22
-      ]
-    },
-    {
       "source": "source_23",
       "target": "CLAIM_23_1",
       "label": "EXTRACTED_FROM",
@@ -9414,7 +8998,15 @@
     },
     {
       "source": "source_23",
-      "target": "CLAIM_23_5",
+      "target": "FACT_23_5",
+      "label": "CONTAINS_FACT",
+      "chunks": [
+        23
+      ]
+    },
+    {
+      "source": "source_23",
+      "target": "CLAIM_23_7",
       "label": "EXTRACTED_FROM",
       "chunks": [
         23
@@ -9422,15 +9014,7 @@
     },
     {
       "source": "source_23",
-      "target": "METHOD_23_8",
-      "label": "EXTRACTED_FROM",
-      "chunks": [
-        23
-      ]
-    },
-    {
-      "source": "source_23",
-      "target": "CLAIM_23_10",
+      "target": "METHOD_23_10",
       "label": "EXTRACTED_FROM",
       "chunks": [
         23
@@ -9439,6 +9023,14 @@
     {
       "source": "source_23",
       "target": "CLAIM_23_12",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        23
+      ]
+    },
+    {
+      "source": "source_23",
+      "target": "CLAIM_23_14",
       "label": "EXTRACTED_FROM",
       "chunks": [
         23
@@ -9462,14 +9054,30 @@
     },
     {
       "source": "FACT_23_3",
-      "target": "entity_stack",
+      "target": "entity_6 identical layers",
       "label": "HAS_OBJECT",
       "chunks": [
         23
       ]
     },
     {
-      "source": "CLAIM_23_5",
+      "source": "FACT_23_5",
+      "target": "entity_decoder",
+      "label": "HAS_SUBJECT",
+      "chunks": [
+        23
+      ]
+    },
+    {
+      "source": "FACT_23_5",
+      "target": "entity_stack of n",
+      "label": "HAS_OBJECT",
+      "chunks": [
+        23
+      ]
+    },
+    {
+      "source": "CLAIM_23_7",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9477,7 +9085,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_5",
+      "source": "CLAIM_23_7",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9485,7 +9093,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_5",
+      "source": "CLAIM_23_7",
       "target": "entity_multi-head attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9493,7 +9101,7 @@
       ]
     },
     {
-      "source": "METHOD_23_8",
+      "source": "METHOD_23_10",
       "target": "entity_encoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9501,7 +9109,7 @@
       ]
     },
     {
-      "source": "METHOD_23_8",
+      "source": "METHOD_23_10",
       "target": "entity_layer normalization",
       "label": "MENTIONS",
       "chunks": [
@@ -9509,7 +9117,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_10",
+      "source": "CLAIM_23_12",
       "target": "entity_decoder",
       "label": "MENTIONS",
       "chunks": [
@@ -9517,7 +9125,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_10",
+      "source": "CLAIM_23_12",
       "target": "entity_self-attention",
       "label": "MENTIONS",
       "chunks": [
@@ -9525,7 +9133,7 @@
       ]
     },
     {
-      "source": "CLAIM_23_12",
+      "source": "CLAIM_23_14",
       "target": "entity_this masking",
       "label": "MENTIONS",
       "chunks": [
@@ -9550,7 +9158,7 @@
     },
     {
       "source": "source_25",
-      "target": "CLAIM_25_5",
+      "target": "CLAIM_25_3",
       "label": "EXTRACTED_FROM",
       "chunks": [
         25
@@ -9559,46 +9167,6 @@
     {
       "source": "CLAIM_25_1",
       "target": "entity_attention function",
-      "label": "MENTIONS",
-      "chunks": [
-        25
-      ]
-    },
-    {
-      "source": "CLAIM_25_1",
-      "target": "entity_query",
-      "label": "MENTIONS",
-      "chunks": [
-        25
-      ]
-    },
-    {
-      "source": "CLAIM_25_1",
-      "target": "entity_value",
-      "label": "MENTIONS",
-      "chunks": [
-        25
-      ]
-    },
-    {
-      "source": "CLAIM_25_5",
-      "target": "entity_query",
-      "label": "MENTIONS",
-      "chunks": [
-        25
-      ]
-    },
-    {
-      "source": "CLAIM_25_5",
-      "target": "entity_output",
-      "label": "MENTIONS",
-      "chunks": [
-        25
-      ]
-    },
-    {
-      "source": "CLAIM_25_5",
-      "target": "entity_value",
       "label": "MENTIONS",
       "chunks": [
         25
@@ -9638,23 +9206,7 @@
     },
     {
       "source": "source_27",
-      "target": "FACT_27_6",
-      "label": "CONTAINS_FACT",
-      "chunks": [
-        27
-      ]
-    },
-    {
-      "source": "source_27",
-      "target": "FACT_27_8",
-      "label": "CONTAINS_FACT",
-      "chunks": [
-        27
-      ]
-    },
-    {
-      "source": "source_27",
-      "target": "METHOD_27_10",
+      "target": "METHOD_27_5",
       "label": "EXTRACTED_FROM",
       "chunks": [
         27
@@ -9677,47 +9229,7 @@
       ]
     },
     {
-      "source": "CLAIM_27_4",
-      "target": "entity_input",
-      "label": "MENTIONS",
-      "chunks": [
-        27
-      ]
-    },
-    {
-      "source": "FACT_27_6",
-      "target": "entity_input",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        27
-      ]
-    },
-    {
-      "source": "FACT_27_6",
-      "target": "entity_queries",
-      "label": "HAS_OBJECT",
-      "chunks": [
-        27
-      ]
-    },
-    {
-      "source": "FACT_27_8",
-      "target": "entity_input",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        27
-      ]
-    },
-    {
-      "source": "FACT_27_8",
-      "target": "entity_keys",
-      "label": "HAS_OBJECT",
-      "chunks": [
-        27
-      ]
-    },
-    {
-      "source": "METHOD_27_10",
+      "source": "METHOD_27_5",
       "target": "entity_k v",
       "label": "MENTIONS",
       "chunks": [
@@ -9765,22 +9277,6 @@
       ]
     },
     {
-      "source": "CLAIM_30_1",
-      "target": "entity_query",
-      "label": "MENTIONS",
-      "chunks": [
-        30
-      ]
-    },
-    {
-      "source": "CLAIM_30_1",
-      "target": "entity_softmax",
-      "label": "MENTIONS",
-      "chunks": [
-        30
-      ]
-    },
-    {
       "source": "source_31",
       "target": "METHOD_31_1",
       "label": "EXTRACTED_FROM",
@@ -9790,7 +9286,7 @@
     },
     {
       "source": "source_31",
-      "target": "METHOD_31_4",
+      "target": "METHOD_31_3",
       "label": "EXTRACTED_FROM",
       "chunks": [
         31
@@ -9799,14 +9295,6 @@
     {
       "source": "METHOD_31_1",
       "target": "entity_q. k v",
-      "label": "MENTIONS",
-      "chunks": [
-        31
-      ]
-    },
-    {
-      "source": "METHOD_31_1",
-      "target": "entity_keys",
       "label": "MENTIONS",
       "chunks": [
         31
@@ -9888,14 +9376,6 @@
       "source": "source_36",
       "target": "METHOD_36_2",
       "label": "EXTRACTED_FROM",
-      "chunks": [
-        36
-      ]
-    },
-    {
-      "source": "METHOD_36_2",
-      "target": "entity_softmax",
-      "label": "MENTIONS",
       "chunks": [
         36
       ]
@@ -9989,14 +9469,6 @@
       ]
     },
     {
-      "source": "source_40",
-      "target": "FACT_40_6",
-      "label": "CONTAINS_FACT",
-      "chunks": [
-        40
-      ]
-    },
-    {
       "source": "FACT_40_3",
       "target": "entity_their dot product, q \u00b7 k = k q k",
       "label": "HAS_SUBJECT",
@@ -10006,22 +9478,6 @@
     },
     {
       "source": "FACT_40_3",
-      "target": "entity_mean",
-      "label": "HAS_OBJECT",
-      "chunks": [
-        40
-      ]
-    },
-    {
-      "source": "FACT_40_6",
-      "target": "entity_their dot product, q \u00b7 k = k q k",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        40
-      ]
-    },
-    {
-      "source": "FACT_40_6",
       "target": "entity_variance d",
       "label": "HAS_OBJECT",
       "chunks": [
@@ -10047,14 +9503,6 @@
     {
       "source": "CLAIM_41_1",
       "target": "entity_)wo multihead(q",
-      "label": "MENTIONS",
-      "chunks": [
-        41
-      ]
-    },
-    {
-      "source": "CLAIM_41_3",
-      "target": "entity_kwk",
       "label": "MENTIONS",
       "chunks": [
         41
@@ -10246,7 +9694,7 @@
     },
     {
       "source": "source_45",
-      "target": "CLAIM_45_19",
+      "target": "CLAIM_45_18",
       "label": "EXTRACTED_FROM",
       "chunks": [
         45
@@ -10397,14 +9845,6 @@
       ]
     },
     {
-      "source": "METHOD_45_16",
-      "target": "entity_softmax",
-      "label": "MENTIONS",
-      "chunks": [
-        45
-      ]
-    },
-    {
       "source": "source_46",
       "target": "CLAIM_46_1",
       "label": "EXTRACTED_FROM",
@@ -10477,14 +9917,6 @@
       ]
     },
     {
-      "source": "CLAIM_47_5",
-      "target": "entity_relu",
-      "label": "MENTIONS",
-      "chunks": [
-        47
-      ]
-    },
-    {
       "source": "source_49",
       "target": "COMPARISON_49_1",
       "label": "EXTRACTED_FROM",
@@ -10549,14 +9981,6 @@
       ]
     },
     {
-      "source": "CLAIM_50_1",
-      "target": "entity_softmax",
-      "label": "MENTIONS",
-      "chunks": [
-        50
-      ]
-    },
-    {
       "source": "source_51",
       "target": "METHOD_51_1",
       "label": "EXTRACTED_FROM",
@@ -10574,7 +9998,7 @@
     },
     {
       "source": "source_51",
-      "target": "METHOD_51_7",
+      "target": "METHOD_51_5",
       "label": "EXTRACTED_FROM",
       "chunks": [
         51
@@ -10582,7 +10006,7 @@
     },
     {
       "source": "source_51",
-      "target": "CLAIM_51_9",
+      "target": "CLAIM_51_6",
       "label": "EXTRACTED_FROM",
       "chunks": [
         51
@@ -10599,46 +10023,6 @@
     {
       "source": "CLAIM_51_3",
       "target": "entity_decoder",
-      "label": "MENTIONS",
-      "chunks": [
-        51
-      ]
-    },
-    {
-      "source": "CLAIM_51_3",
-      "target": "entity_linear",
-      "label": "MENTIONS",
-      "chunks": [
-        51
-      ]
-    },
-    {
-      "source": "CLAIM_51_3",
-      "target": "entity_softmax",
-      "label": "MENTIONS",
-      "chunks": [
-        51
-      ]
-    },
-    {
-      "source": "METHOD_51_7",
-      "target": "entity_embedding",
-      "label": "MENTIONS",
-      "chunks": [
-        51
-      ]
-    },
-    {
-      "source": "METHOD_51_7",
-      "target": "entity_softmax",
-      "label": "MENTIONS",
-      "chunks": [
-        51
-      ]
-    },
-    {
-      "source": "CLAIM_51_9",
-      "target": "entity_embedding",
       "label": "MENTIONS",
       "chunks": [
         51
@@ -10670,7 +10054,7 @@
     },
     {
       "source": "source_53",
-      "target": "FACT_53_4",
+      "target": "FACT_53_2",
       "label": "CONTAINS_FACT",
       "chunks": [
         53
@@ -10678,7 +10062,7 @@
     },
     {
       "source": "source_53",
-      "target": "FACT_53_7",
+      "target": "FACT_53_5",
       "label": "CONTAINS_FACT",
       "chunks": [
         53
@@ -10686,30 +10070,14 @@
     },
     {
       "source": "source_53",
-      "target": "METHOD_53_9",
+      "target": "METHOD_53_7",
       "label": "EXTRACTED_FROM",
       "chunks": [
         53
       ]
     },
     {
-      "source": "CLAIM_53_1",
-      "target": "entity_convolution",
-      "label": "MENTIONS",
-      "chunks": [
-        53
-      ]
-    },
-    {
-      "source": "CLAIM_53_1",
-      "target": "entity_recurrence",
-      "label": "MENTIONS",
-      "chunks": [
-        53
-      ]
-    },
-    {
-      "source": "FACT_53_4",
+      "source": "FACT_53_2",
       "target": "entity_our model",
       "label": "HAS_SUBJECT",
       "chunks": [
@@ -10717,7 +10085,7 @@
       ]
     },
     {
-      "source": "FACT_53_4",
+      "source": "FACT_53_2",
       "target": "entity_no recurrence",
       "label": "HAS_OBJECT",
       "chunks": [
@@ -10725,7 +10093,7 @@
       ]
     },
     {
-      "source": "FACT_53_7",
+      "source": "FACT_53_5",
       "target": "entity_our model",
       "label": "HAS_SUBJECT",
       "chunks": [
@@ -10733,7 +10101,7 @@
       ]
     },
     {
-      "source": "FACT_53_7",
+      "source": "FACT_53_5",
       "target": "entity_no convolution",
       "label": "HAS_OBJECT",
       "chunks": [
@@ -10926,8 +10294,16 @@
     },
     {
       "source": "source_61",
-      "target": "FACT_61_7",
-      "label": "CONTAINS_FACT",
+      "target": "CLAIM_61_6",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        61
+      ]
+    },
+    {
+      "source": "source_61",
+      "target": "CLAIM_61_8",
+      "label": "EXTRACTED_FROM",
       "chunks": [
         61
       ]
@@ -10942,23 +10318,7 @@
     },
     {
       "source": "source_61",
-      "target": "CLAIM_61_11",
-      "label": "EXTRACTED_FROM",
-      "chunks": [
-        61
-      ]
-    },
-    {
-      "source": "source_61",
-      "target": "CLAIM_61_12",
-      "label": "EXTRACTED_FROM",
-      "chunks": [
-        61
-      ]
-    },
-    {
-      "source": "source_61",
-      "target": "HEDGING_61_13",
+      "target": "HEDGING_61_10",
       "label": "EXTRACTED_FROM",
       "chunks": [
         61
@@ -10981,31 +10341,7 @@
       ]
     },
     {
-      "source": "CLAIM_61_5",
-      "target": "entity_wavelengths",
-      "label": "MENTIONS",
-      "chunks": [
-        61
-      ]
-    },
-    {
-      "source": "FACT_61_7",
-      "target": "entity_wavelengths",
-      "label": "HAS_SUBJECT",
-      "chunks": [
-        61
-      ]
-    },
-    {
-      "source": "FACT_61_7",
-      "target": "entity_geometric progression",
-      "label": "HAS_OBJECT",
-      "chunks": [
-        61
-      ]
-    },
-    {
-      "source": "CLAIM_61_9",
+      "source": "CLAIM_61_6",
       "target": "entity_pe relative positions",
       "label": "MENTIONS",
       "chunks": [
@@ -11016,6 +10352,14 @@
       "source": "source_62",
       "target": "CLAIM_62_1",
       "label": "EXTRACTED_FROM",
+      "chunks": [
+        62
+      ]
+    },
+    {
+      "source": "CLAIM_62_1",
+      "target": "entity_4 why self-attention",
+      "label": "MENTIONS",
       "chunks": [
         62
       ]
@@ -11342,14 +10686,6 @@
     },
     {
       "source": "LIMITATION_70_6",
-      "target": "entity_convolution",
-      "label": "MENTIONS",
-      "chunks": [
-        70
-      ]
-    },
-    {
-      "source": "LIMITATION_70_6",
       "target": "entity_feed-forward",
       "label": "MENTIONS",
       "chunks": [
@@ -11382,7 +10718,7 @@
     },
     {
       "source": "source_71",
-      "target": "CLAIM_71_5",
+      "target": "CLAIM_71_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         71
@@ -11390,7 +10726,7 @@
     },
     {
       "source": "source_71",
-      "target": "CERTAINTY_71_6",
+      "target": "CERTAINTY_71_5",
       "label": "EXTRACTED_FROM",
       "chunks": [
         71
@@ -11399,14 +10735,6 @@
     {
       "source": "CLAIM_71_1",
       "target": "entity_assidebenefit, self-attentioncouldyieldmoreinterpretablemodels",
-      "label": "MENTIONS",
-      "chunks": [
-        71
-      ]
-    },
-    {
-      "source": "CLAIM_71_3",
-      "target": "entity_weinspectattentiondistributions",
       "label": "MENTIONS",
       "chunks": [
         71
@@ -11446,14 +10774,6 @@
     },
     {
       "source": "CLAIM_74_1",
-      "target": "entity_batching",
-      "label": "MENTIONS",
-      "chunks": [
-        74
-      ]
-    },
-    {
-      "source": "CLAIM_74_1",
       "target": "entity_training data and batching",
       "label": "MENTIONS",
       "chunks": [
@@ -11463,6 +10783,14 @@
     {
       "source": "source_75",
       "target": "CLAIM_75_1",
+      "label": "EXTRACTED_FROM",
+      "chunks": [
+        75
+      ]
+    },
+    {
+      "source": "source_75",
+      "target": "CLAIM_75_2",
       "label": "EXTRACTED_FROM",
       "chunks": [
         75
@@ -11486,7 +10814,7 @@
     },
     {
       "source": "source_75",
-      "target": "CLAIM_75_9",
+      "target": "CLAIM_75_8",
       "label": "EXTRACTED_FROM",
       "chunks": [
         75
@@ -11494,46 +10822,14 @@
     },
     {
       "source": "source_75",
-      "target": "CLAIM_75_11",
-      "label": "EXTRACTED_FROM",
-      "chunks": [
-        75
-      ]
-    },
-    {
-      "source": "source_75",
-      "target": "FACT_75_13",
+      "target": "FACT_75_10",
       "label": "CONTAINS_FACT",
       "chunks": [
         75
       ]
     },
     {
-      "source": "CLAIM_75_1",
-      "target": "entity_wmt",
-      "label": "MENTIONS",
-      "chunks": [
-        75
-      ]
-    },
-    {
       "source": "CLAIM_75_3",
-      "target": "entity_byte",
-      "label": "MENTIONS",
-      "chunks": [
-        75
-      ]
-    },
-    {
-      "source": "CLAIM_75_3",
-      "target": "entity_sentences",
-      "label": "MENTIONS",
-      "chunks": [
-        75
-      ]
-    },
-    {
-      "source": "CLAIM_75_6",
       "target": "entity_english-french",
       "label": "MENTIONS",
       "chunks": [
@@ -11541,15 +10837,7 @@
       ]
     },
     {
-      "source": "CLAIM_75_6",
-      "target": "entity_wmt",
-      "label": "MENTIONS",
-      "chunks": [
-        75
-      ]
-    },
-    {
-      "source": "CLAIM_75_6",
+      "source": "CLAIM_75_3",
       "target": "entity_word-piece",
       "label": "MENTIONS",
       "chunks": [
@@ -11557,7 +10845,7 @@
       ]
     },
     {
-      "source": "CLAIM_75_9",
+      "source": "CLAIM_75_6",
       "target": "entity_sentence pairs",
       "label": "MENTIONS",
       "chunks": [
@@ -11565,7 +10853,7 @@
       ]
     },
     {
-      "source": "CLAIM_75_11",
+      "source": "CLAIM_75_8",
       "target": "entity_each training batch",
       "label": "MENTIONS",
       "chunks": [
@@ -11573,7 +10861,7 @@
       ]
     },
     {
-      "source": "FACT_75_13",
+      "source": "FACT_75_10",
       "target": "entity_each training batch",
       "label": "HAS_SUBJECT",
       "chunks": [
@@ -11581,8 +10869,8 @@
       ]
     },
     {
-      "source": "FACT_75_13",
-      "target": "entity_set",
+      "source": "FACT_75_10",
+      "target": "entity_set of sentence pairs containing approximately 25000 source tokens and 25000 target tokens",
       "label": "HAS_OBJECT",
       "chunks": [
         75
@@ -11592,22 +10880,6 @@
       "source": "source_76",
       "target": "CLAIM_76_1",
       "label": "EXTRACTED_FROM",
-      "chunks": [
-        76
-      ]
-    },
-    {
-      "source": "CLAIM_76_1",
-      "target": "entity_hardware",
-      "label": "MENTIONS",
-      "chunks": [
-        76
-      ]
-    },
-    {
-      "source": "CLAIM_76_1",
-      "target": "entity_schedule",
-      "label": "MENTIONS",
       "chunks": [
         76
       ]
@@ -12062,7 +11334,7 @@
     },
     {
       "source": "source_94",
-      "target": "RESULT_94_4",
+      "target": "RESULT_94_3",
       "label": "EXTRACTED_FROM",
       "chunks": [
         94
@@ -12077,23 +11349,7 @@
       ]
     },
     {
-      "source": "CLAIM_94_1",
-      "target": "entity_value",
-      "label": "MENTIONS",
-      "chunks": [
-        94
-      ]
-    },
-    {
-      "source": "RESULT_94_4",
-      "target": "entity_accuracy",
-      "label": "MENTIONS",
-      "chunks": [
-        94
-      ]
-    },
-    {
-      "source": "RESULT_94_4",
+      "source": "RESULT_94_3",
       "target": "entity_bleu",
       "label": "MENTIONS",
       "chunks": [
@@ -12101,15 +11357,7 @@
       ]
     },
     {
-      "source": "RESULT_94_4",
-      "target": "entity_perplexity",
-      "label": "MENTIONS",
-      "chunks": [
-        94
-      ]
-    },
-    {
-      "source": "RESULT_94_4",
+      "source": "RESULT_94_3",
       "target": "entity_this ls",
       "label": "MENTIONS",
       "chunks": [
@@ -12142,7 +11390,7 @@
     },
     {
       "source": "source_96",
-      "target": "RESULT_96_4",
+      "target": "RESULT_96_3",
       "label": "EXTRACTED_FROM",
       "chunks": [
         96
@@ -12150,7 +11398,7 @@
     },
     {
       "source": "source_96",
-      "target": "CLAIM_96_7",
+      "target": "CLAIM_96_5",
       "label": "EXTRACTED_FROM",
       "chunks": [
         96
@@ -12158,7 +11406,23 @@
     },
     {
       "source": "source_96",
-      "target": "METRIC_96_9",
+      "target": "METRIC_96_6",
+      "label": "CONTAINS_METRIC",
+      "chunks": [
+        96
+      ]
+    },
+    {
+      "source": "source_96",
+      "target": "METRIC_96_8",
+      "label": "CONTAINS_METRIC",
+      "chunks": [
+        96
+      ]
+    },
+    {
+      "source": "source_96",
+      "target": "METRIC_96_10",
       "label": "CONTAINS_METRIC",
       "chunks": [
         96
@@ -12174,23 +11438,7 @@
     },
     {
       "source": "source_96",
-      "target": "METRIC_96_13",
-      "label": "CONTAINS_METRIC",
-      "chunks": [
-        96
-      ]
-    },
-    {
-      "source": "source_96",
-      "target": "METRIC_96_14",
-      "label": "CONTAINS_METRIC",
-      "chunks": [
-        96
-      ]
-    },
-    {
-      "source": "source_96",
-      "target": "CLAIM_96_15",
+      "target": "CLAIM_96_12",
       "label": "EXTRACTED_FROM",
       "chunks": [
         96
@@ -12205,15 +11453,7 @@
       ]
     },
     {
-      "source": "RESULT_96_1",
-      "target": "entity_wmt",
-      "label": "MENTIONS",
-      "chunks": [
-        96
-      ]
-    },
-    {
-      "source": "RESULT_96_4",
+      "source": "RESULT_96_3",
       "target": "entity_bleu",
       "label": "MENTIONS",
       "chunks": [
@@ -12221,23 +11461,23 @@
       ]
     },
     {
-      "source": "RESULT_96_4",
-      "target": "entity_configuration",
-      "label": "MENTIONS",
+      "source": "METRIC_96_6",
+      "target": "entity_days",
+      "label": "MEASURES",
       "chunks": [
         96
       ]
     },
     {
-      "source": "CLAIM_96_7",
-      "target": "entity_training",
-      "label": "MENTIONS",
+      "source": "METRIC_96_8",
+      "target": "entity_gpus",
+      "label": "MEASURES",
       "chunks": [
         96
       ]
     },
     {
-      "source": "METRIC_96_9",
+      "source": "METRIC_96_10",
       "target": "entity_days",
       "label": "MEASURES",
       "chunks": [
@@ -12253,23 +11493,7 @@
       ]
     },
     {
-      "source": "METRIC_96_13",
-      "target": "entity_days",
-      "label": "MEASURES",
-      "chunks": [
-        96
-      ]
-    },
-    {
-      "source": "METRIC_96_14",
-      "target": "entity_gpus",
-      "label": "MEASURES",
-      "chunks": [
-        96
-      ]
-    },
-    {
-      "source": "CLAIM_96_15",
+      "source": "CLAIM_96_12",
       "target": "entity_even our base model",
       "label": "MENTIONS",
       "chunks": [
@@ -12287,14 +11511,6 @@
     {
       "source": "RESULT_97_1",
       "target": "entity_bleu",
-      "label": "MENTIONS",
-      "chunks": [
-        97
-      ]
-    },
-    {
-      "source": "RESULT_97_1",
-      "target": "entity_wmt",
       "label": "MENTIONS",
       "chunks": [
         97
@@ -12397,22 +11613,6 @@
       ]
     },
     {
-      "source": "METHOD_99_2",
-      "target": "entity_gpu",
-      "label": "MENTIONS",
-      "chunks": [
-        99
-      ]
-    },
-    {
-      "source": "METHOD_99_2",
-      "target": "entity_gpus",
-      "label": "MENTIONS",
-      "chunks": [
-        99
-      ]
-    },
-    {
       "source": "source_100",
       "target": "CLAIM_100_1",
       "label": "EXTRACTED_FROM",
@@ -12478,7 +11678,7 @@
     },
     {
       "source": "source_102",
-      "target": "RESULT_102_3",
+      "target": "RESULT_102_2",
       "label": "EXTRACTED_FROM",
       "chunks": [
         102
@@ -12486,22 +11686,14 @@
     },
     {
       "source": "source_102",
-      "target": "METRIC_102_5",
+      "target": "METRIC_102_4",
       "label": "CONTAINS_METRIC",
       "chunks": [
         102
       ]
     },
     {
-      "source": "METHOD_102_1",
-      "target": "entity_value",
-      "label": "MENTIONS",
-      "chunks": [
-        102
-      ]
-    },
-    {
-      "source": "RESULT_102_3",
+      "source": "RESULT_102_2",
       "target": "entity_bleu",
       "label": "MENTIONS",
       "chunks": [
@@ -12509,7 +11701,7 @@
       ]
     },
     {
-      "source": "METRIC_102_5",
+      "source": "METRIC_102_4",
       "target": "entity_bleu",
       "label": "MEASURES",
       "chunks": [
@@ -12766,7 +11958,7 @@
     },
     {
       "source": "source_111",
-      "target": "RESULT_111_5",
+      "target": "RESULT_111_4",
       "label": "EXTRACTED_FROM",
       "chunks": [
         111
@@ -12775,14 +11967,6 @@
     {
       "source": "COMPARISON_111_1",
       "target": "entity_transformer",
-      "label": "MENTIONS",
-      "chunks": [
-        111
-      ]
-    },
-    {
-      "source": "RESULT_111_3",
-      "target": "entity_wmt",
       "label": "MENTIONS",
       "chunks": [
         111
@@ -12837,14 +12021,6 @@
       ]
     },
     {
-      "source": "CLAIM_113_1",
-      "target": "entity_code",
-      "label": "MENTIONS",
-      "chunks": [
-        113
-      ]
-    },
-    {
       "source": "source_114",
       "target": "CLAIM_114_1",
       "label": "EXTRACTED_FROM",
@@ -12885,14 +12061,6 @@
       ]
     },
     {
-      "source": "CLAIM_115_2",
-      "target": "entity_corr",
-      "label": "MENTIONS",
-      "chunks": [
-        115
-      ]
-    },
-    {
       "source": "source_116",
       "target": "CLAIM_116_1",
       "label": "EXTRACTED_FROM",
@@ -12902,16 +12070,8 @@
     },
     {
       "source": "source_116",
-      "target": "CLAIM_116_4",
+      "target": "CLAIM_116_3",
       "label": "EXTRACTED_FROM",
-      "chunks": [
-        116
-      ]
-    },
-    {
-      "source": "CLAIM_116_1",
-      "target": "entity_corr",
-      "label": "MENTIONS",
       "chunks": [
         116
       ]
@@ -12981,14 +12141,6 @@
       ]
     },
     {
-      "source": "CLAIM_117_7",
-      "target": "entity_corr",
-      "label": "MENTIONS",
-      "chunks": [
-        117
-      ]
-    },
-    {
       "source": "source_119",
       "target": "CLAIM_119_1",
       "label": "EXTRACTED_FROM",
@@ -13005,25 +12157,9 @@
       ]
     },
     {
-      "source": "CLAIM_119_2",
-      "target": "entity_corr",
-      "label": "MENTIONS",
-      "chunks": [
-        119
-      ]
-    },
-    {
       "source": "source_121",
       "target": "CLAIM_121_1",
       "label": "EXTRACTED_FROM",
-      "chunks": [
-        121
-      ]
-    },
-    {
-      "source": "CLAIM_121_1",
-      "target": "entity_recognition",
-      "label": "MENTIONS",
       "chunks": [
         121
       ]
@@ -13133,14 +12269,6 @@
       ]
     },
     {
-      "source": "CLAIM_128_1",
-      "target": "entity_nips",
-      "label": "MENTIONS",
-      "chunks": [
-        128
-      ]
-    },
-    {
       "source": "source_129",
       "target": "CLAIM_129_1",
       "label": "EXTRACTED_FROM",
@@ -13222,7 +12350,7 @@
     },
     {
       "source": "source_132",
-      "target": "CLAIM_132_6",
+      "target": "CLAIM_132_5",
       "label": "EXTRACTED_FROM",
       "chunks": [
         132
@@ -13231,14 +12359,6 @@
     {
       "source": "CLAIM_132_1",
       "target": "entity_dropout",
-      "label": "MENTIONS",
-      "chunks": [
-        132
-      ]
-    },
-    {
-      "source": "CLAIM_132_1",
-      "target": "entity_journal",
       "label": "MENTIONS",
       "chunks": [
         132
@@ -13261,7 +12381,7 @@
       ]
     },
     {
-      "source": "CLAIM_132_6",
+      "source": "CLAIM_132_5",
       "target": "entity_learning research",
       "label": "MENTIONS",
       "chunks": [
@@ -13325,14 +12445,6 @@
       ]
     },
     {
-      "source": "CLAIM_134_1",
-      "target": "entity_inc",
-      "label": "MENTIONS",
-      "chunks": [
-        134
-      ]
-    },
-    {
       "source": "source_135",
       "target": "CLAIM_135_1",
       "label": "EXTRACTED_FROM",
@@ -13349,14 +12461,6 @@
       ]
     },
     {
-      "source": "CLAIM_135_2",
-      "target": "entity_corr",
-      "label": "MENTIONS",
-      "chunks": [
-        135
-      ]
-    },
-    {
       "source": "source_136",
       "target": "CLAIM_136_1",
       "label": "EXTRACTED_FROM",
@@ -13366,7 +12470,7 @@
     },
     {
       "source": "source_136",
-      "target": "CLAIM_136_7",
+      "target": "CLAIM_136_6",
       "label": "EXTRACTED_FROM",
       "chunks": [
         136
@@ -13375,14 +12479,6 @@
     {
       "source": "CLAIM_136_1",
       "target": "entity_klaus macherey",
-      "label": "MENTIONS",
-      "chunks": [
-        136
-      ]
-    },
-    {
-      "source": "CLAIM_136_1",
-      "target": "entity_macherey",
       "label": "MENTIONS",
       "chunks": [
         136
@@ -13413,15 +12509,7 @@
       ]
     },
     {
-      "source": "CLAIM_136_7",
-      "target": "entity_google",
-      "label": "MENTIONS",
-      "chunks": [
-        136
-      ]
-    },
-    {
-      "source": "CLAIM_136_7",
+      "source": "CLAIM_136_6",
       "target": "entity_google\u2019s neural machine",
       "label": "MENTIONS",
       "chunks": [
@@ -13447,14 +12535,6 @@
     {
       "source": "CLAIM_137_1",
       "target": "entity_machine translation",
-      "label": "MENTIONS",
-      "chunks": [
-        137
-      ]
-    },
-    {
-      "source": "CLAIM_137_3",
-      "target": "entity_corr",
       "label": "MENTIONS",
       "chunks": [
         137
